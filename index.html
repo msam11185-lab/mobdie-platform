@@ -15,9 +15,9 @@
 </head>
 <body class="text-slate-900 pb-20">
 
-  <!-- الترويسة والشعار الرسمي -->
+  <!-- 1. الترويسة وشريط الملاحة الرسمي -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 px-4 py-3 shadow-xs">
-    <div class="max-w-4xl mx-auto flex items-center justify-between">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="w-10 h-10 rounded-xl bg-emerald-700 text-amber-300 font-black text-xl flex items-center justify-center shadow-md">
           مـ
@@ -30,13 +30,137 @@
           <span class="text-[10px] text-slate-500 block font-semibold">إشراف وتأسيس: <strong class="text-emerald-800">أ. محمد السنوسي</strong></span>
         </div>
       </div>
-      <a href="#subscribe" class="text-xs bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-3.5 py-2 rounded-xl shadow-xs transition">
-        الاشتراك والسداد
-      </a>
+
+      <div class="flex items-center gap-2">
+        <!-- زر الدخول السري لإدارة المؤسس -->
+        <button onclick="toggleAdminPanel()" class="text-xs bg-slate-900 hover:bg-slate-800 text-amber-300 font-bold px-3 py-2 rounded-xl transition flex items-center gap-1.5 shadow-xs">
+          <span>لوحة المؤسس</span>
+          <span>🔐</span>
+        </button>
+        <a href="#subscribe" class="text-xs bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-3 py-2 rounded-xl shadow-xs transition">
+          الاشتراك والسداد
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- واجهة التقديم -->
+  <!-- ================= نافذة لوحة تحكم المؤسس وإدارة المحتويات (تفتح عند الضغط على الزر) ================= -->
+  <div id="admin-panel-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl p-6 md:p-8 border border-slate-200 shadow-2xl space-y-6">
+      
+      <div class="flex items-center justify-between border-b pb-4">
+        <div>
+          <span class="text-[10px] bg-amber-100 text-amber-900 px-2 py-0.5 rounded font-bold">كنترول الإدارة العامة</span>
+          <h2 class="text-xl font-black text-slate-900 mt-1">بوابة إدارة محتويات «مُبدِع» — أ. محمد السنوسي</h2>
+        </div>
+        <button onclick="toggleAdminPanel()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-rose-100 hover:text-rose-600 font-bold flex items-center justify-center">
+          ✕
+        </button>
+      </div>
+
+      <!-- تبويبات إدارة المحتوى -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-bold" id="admin-tabs">
+        <button onclick="switchAdminTab('subscribers')" class="p-3 rounded-xl bg-emerald-700 text-white transition text-center shadow-xs">
+          💳 كنترول الحوالات (01062650131)
+        </button>
+        <button onclick="switchAdminTab('curriculum')" class="p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition text-center">
+          📚 المناهج والاختبارات (K-16)
+        </button>
+        <button onclick="switchAdminTab('vouchers')" class="p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition text-center">
+          🎟️ كروت شحن السناتر
+        </button>
+        <button onclick="switchAdminTab('tools')" class="p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition text-center">
+          ⚙️ مختبرات الإعراب الذكية
+        </button>
+      </div>
+
+      <!-- محتوى التبويب 1: فحص وتأكيد الحوالات -->
+      <div id="tab-subscribers" class="space-y-4 text-xs">
+        <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-2xl flex justify-between items-center">
+          <div>
+            <span class="font-bold text-emerald-950 block">الحساب المعتمد لاستقبال الرسوم:</span>
+            <span class="text-xs text-emerald-800 font-mono">فودافون كاش & انستاباي: 01062650131</span>
+          </div>
+          <span class="text-[11px] bg-emerald-200 text-emerald-950 px-2.5 py-1 rounded-lg font-bold">الحساب نشط ✓</span>
+        </div>
+
+        <h4 class="font-bold text-slate-800 text-sm">أحدث طلبات الاشتراك المسجلة:</h4>
+        <div class="space-y-2" id="orders-list">
+          <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+            <div>
+              <span class="font-bold text-slate-900 text-sm block">أحمد إبراهيم منصور</span>
+              <span class="text-slate-500 text-[11px]">باقة: الترم الكامل (810 ج.م) • رقم المحول: 01023456789</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="activateStudent(this)" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold">
+                تفعيل الحساب فوراً
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- محتوى التبويب 2: استعراض المناهج الدراسية المصرية -->
+      <div id="tab-curriculum" class="hidden space-y-4 text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+            <span class="font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded text-[10px]">الثانوية العامة (البكالوريا)</span>
+            <h5 class="font-bold text-slate-900">الوحدات النحوية السبع + البلاغة المتحررة</h5>
+            <p class="text-slate-500 text-[11px]">تشمل بنوك أسئلة البابل شيت، الصور المركبة والممتدة، وسيرة الأيام لطه حسين.</p>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+            <span class="font-bold text-blue-800 bg-blue-100 px-2 py-0.5 rounded text-[10px]">الشهادة الإعدادية</span>
+            <h5 class="font-bold text-slate-900">نحو امتحانات المحافظات</h5>
+            <p class="text-slate-500 text-[11px]">تريكات المنادى، البدل، أسلوبي المدح والذم، والممنوع من الصرف لعلة ولعلتين.</p>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+            <span class="font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded text-[10px]">المرحلة الابتدائية المطورة</span>
+            <h5 class="font-bold text-slate-900">معمل التعبير الكتابي والمهام الأدائية</h5>
+            <p class="text-slate-500 text-[11px]">تدريب عملي على كتابة المطوية، الرسالة، والقصة القصيرة للصفوف 4 و5 و6.</p>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+            <span class="font-bold text-purple-800 bg-purple-100 px-2 py-0.5 rounded text-[10px]">الجامعات والدراسات العليا</span>
+            <h5 class="font-bold text-slate-900">بحوث فقه اللغة وأصول النحو</h5>
+            <p class="text-slate-500 text-[11px]">مقارنات مدارس البصرة والكوفة لطلاب كليات دار العلوم والألسن والآداب.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- محتوى التبويب 3: توليد كروت الشحن للمكتبات -->
+      <div id="tab-vouchers" class="hidden space-y-4 text-xs">
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
+          <h5 class="font-bold text-slate-900">توليد أكواد شحن جديدة للمكتبات والسناتر:</h5>
+          <div class="flex gap-2">
+            <select id="voucher-type" class="p-2.5 rounded-xl border border-slate-200 bg-white font-bold text-xs flex-1">
+              <option>باقة الترم الكامل (810 ج.م)</option>
+              <option>باقة شهرية (180 ج.م)</option>
+            </select>
+            <button onclick="generateVoucher()" class="px-5 py-2.5 bg-slate-900 text-white rounded-xl font-bold">
+              توليد كود كارت جديد
+            </button>
+          </div>
+          <div id="generated-voucher-box" class="hidden p-3 bg-white rounded-xl border border-emerald-300 font-mono text-center text-sm font-black text-emerald-800">
+          </div>
+        </div>
+      </div>
+
+      <!-- محتوى التبويب 4: ترسانة الأدوات والمختبرات -->
+      <div id="tab-tools" class="hidden space-y-3 text-xs">
+        <p class="text-slate-500">كافة أدوات المعالجة اللغوية المدمجة في النظام:</p>
+        <div class="grid grid-cols-2 gap-2 text-slate-800 font-bold">
+          <div class="p-3 bg-slate-50 rounded-xl border">🌿 مشجر الإعراب البصري</div>
+          <div class="p-3 bg-slate-50 rounded-xl border">✒️ ميزان العروض والشعر</div>
+          <div class="p-3 bg-slate-50 rounded-xl border">📖 جامع المعاجم الخمسة</div>
+          <div class="p-3 bg-slate-50 rounded-xl border">🎙️ إذاعة صوت مُبدِع الفصيح</div>
+          <div class="p-3 bg-slate-50 rounded-xl border">🔢 مُفقّط الأرقام والعدد</div>
+          <div class="p-3 bg-slate-50 rounded-xl border">🛡️ مشغل الفيديوهات المصفح</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= واجهة الموقع العامة للطلاب والجمهور ================= -->
   <section class="max-w-4xl mx-auto px-4 pt-8 pb-6 text-center space-y-3">
     <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-full text-xs font-bold">
       ✨ المنصة التعليمية الأولى لجميع المناهج المصرية
@@ -91,13 +215,13 @@
       <div class="text-center space-y-1 border-b pb-4">
         <span class="text-xs bg-amber-100 text-amber-900 px-3 py-1 rounded-full font-bold">باقات الترم الدراسي الجديد</span>
         <h3 class="text-xl font-black text-slate-900 mt-2">الاشتراك وتفعيل الحساب فورياً</h3>
-        <p class="text-xs text-slate-500">سدد رسوم الباقة عبر فودافون كاش أو انستاباي وسنُفعّل حسابك في دقائق</p>
+        <p class="text-xs text-slate-500">اختر باقتك وسدد عبر فودافون كاش أو انستاباي وسنُفعّل حسابك فوراً</p>
       </div>
 
       <div class="p-6 bg-slate-950 text-white rounded-3xl text-center space-y-3">
         <span class="text-xs text-amber-300 font-bold block">رقم التحويل المعتمد (محافظ كاش & انستاباي):</span>
         <div class="flex items-center justify-center gap-2">
-          <span class="text-3xl sm:text-4xl font-mono font-black tracking-widest text-emerald-400 select-all">
+          <span id="target-phone" class="text-3xl sm:text-4xl font-mono font-black tracking-widest text-emerald-400 select-all">
             01062650131
           </span>
           <button onclick="copyNumber()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white text-xs rounded-xl border border-slate-700 transition">
@@ -107,15 +231,37 @@
         <p class="text-xs text-slate-400">الاسم المسجل للحساب: <strong class="text-slate-200">الأستاذ محمد السنوسي</strong></p>
       </div>
 
-      <div class="grid grid-cols-2 gap-3 text-xs">
-        <div class="p-3 bg-slate-50 border border-slate-200 rounded-2xl text-center">
-          <span class="text-slate-400 block font-semibold text-[10px]">اشتراك شهري:</span>
-          <span class="text-base font-black text-slate-900 font-mono">180 ج.م</span>
+      <!-- أزرار اختيار الباقة التفاعلية -->
+      <div class="space-y-1.5">
+        <label class="block font-bold text-xs text-slate-700">اضغط لاختيار الباقة المناسبة لك:</label>
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <button
+            type="button"
+            id="plan-monthly"
+            onclick="selectPlan('شهري', 180)"
+            class="p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-emerald-400 transition text-center space-y-1"
+          >
+            <span class="text-slate-600 block font-bold text-xs">اشتراك شهري</span>
+            <span class="text-lg font-black text-slate-900 font-mono block">180 ج.م</span>
+            <span class="text-[10px] text-slate-400 block">مرونة وتجديد شهري</span>
+          </button>
+
+          <button
+            type="button"
+            id="plan-term"
+            onclick="selectPlan('ترم كامل', 810)"
+            class="p-4 rounded-2xl border-2 border-emerald-600 bg-emerald-50/70 transition text-center space-y-1 shadow-xs"
+          >
+            <span class="text-emerald-800 block font-bold text-xs">ترم كامل (الأكثر توفيراً)</span>
+            <span class="text-lg font-black text-emerald-950 font-mono block">810 ج.م</span>
+            <span class="text-[10px] text-emerald-700 block font-bold">خصم 25% + مراجعات</span>
+          </button>
         </div>
-        <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-2xl text-center">
-          <span class="text-emerald-800 block font-semibold text-[10px]">ترم كامل (الأكثر اختياراً):</span>
-          <span class="text-base font-black text-emerald-950 font-mono">810 ج.م</span>
-        </div>
+      </div>
+
+      <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex justify-between items-center text-xs">
+        <span>الباقة المحددة للسداد:</span>
+        <span id="selected-plan-badge" class="font-bold text-emerald-800 font-mono">باقة الترم الكامل (810 ج.م)</span>
       </div>
 
       <form onsubmit="sendPaymentConfirmation(event)" class="space-y-3 text-xs">
@@ -141,6 +287,58 @@
   </footer>
 
   <script>
+    let currentSelectedPlan = "ترم كامل";
+    let currentSelectedPrice = 810;
+
+    // فتح وإغلاق لوحة تحكم المؤسس
+    function toggleAdminPanel() {
+      const panel = document.getElementById("admin-panel-modal");
+      panel.classList.toggle("hidden");
+    }
+
+    // التنقل بين تبويبات لوحة التحكم
+    function switchAdminTab(tabName) {
+      document.getElementById("tab-subscribers").classList.add("hidden");
+      document.getElementById("tab-curriculum").classList.add("hidden");
+      document.getElementById("tab-vouchers").classList.add("hidden");
+      document.getElementById("tab-tools").classList.add("hidden");
+
+      document.getElementById("tab-" + tabName).classList.remove("hidden");
+    }
+
+    // تفعيل اشتراك طالب تجريبياً من الكنترول
+    function activateStudent(btn) {
+      btn.innerText = "تم التفعيل ✓";
+      btn.className = "px-4 py-2 bg-slate-200 text-emerald-800 rounded-xl font-bold cursor-default";
+      confetti({ particleCount: 50, spread: 50, origin: { y: 0.6 } });
+    }
+
+    // توليد كود كارت شحن للمكتبات
+    function generateVoucher() {
+      const randomCode = "SANUSI-" + Math.floor(1000 + Math.random() * 9000) + "-" + Math.floor(10 + Math.random() * 90);
+      const box = document.getElementById("generated-voucher-box");
+      box.classList.remove("hidden");
+      box.innerHTML = "كود الكارت الجديد الجاهز للطباعة: <br><strong class='text-base text-slate-900 select-all'>" + randomCode + "</strong>";
+    }
+
+    function selectPlan(planType, price) {
+      currentSelectedPlan = planType;
+      currentSelectedPrice = price;
+      const btnMonthly = document.getElementById("plan-monthly");
+      const btnTerm = document.getElementById("plan-term");
+      const badge = document.getElementById("selected-plan-badge");
+
+      if (planType === "شهري") {
+        btnMonthly.className = "p-4 rounded-2xl border-2 border-emerald-600 bg-emerald-50/70 transition text-center space-y-1 shadow-xs";
+        btnTerm.className = "p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-emerald-400 transition text-center space-y-1";
+        badge.innerText = "الاشتراك الشهري (180 ج.م)";
+      } else {
+        btnTerm.className = "p-4 rounded-2xl border-2 border-emerald-600 bg-emerald-50/70 transition text-center space-y-1 shadow-xs";
+        btnMonthly.className = "p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-emerald-400 transition text-center space-y-1";
+        badge.innerText = "باقة الترم الكامل (810 ج.م)";
+      }
+    }
+
     function checkAnswer(btn, isCorrect) {
       const resultDiv = document.getElementById("quiz-result");
       resultDiv.classList.remove("hidden", "bg-emerald-50", "bg-rose-50", "border-emerald-200", "border-rose-200");
@@ -169,6 +367,7 @@
         `السلام عليكم أ. محمد السنوسي 🌿\n\n` +
         `أنا الطالب: (${name})\n` +
         `قمت بالتحويل للاشتراك في منصة «مُبدِع» لعلوم الضاد.\n` +
+        `• الباقة المختارة: [ ${currentSelectedPlan} - بقيمة ${currentSelectedPrice} ج.م ]\n` +
         `• الحساب المحول منه: ${sender}\n` +
         `• المحول إليه: 01062650131\n\n` +
         `برجاء تفعيل حسابي.`

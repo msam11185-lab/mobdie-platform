@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة مُبدِع | لعلوم الضاد - أ. محمد السنوسي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    body { font-family: 'Cairo', sans-serif; background-color: #f8fafc; }
+  </style>
+</head>
+<body class="text-slate-900 pb-20">
+
+  <!-- الترويسة والشعار الرسمي -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 px-4 py-3 shadow-xs">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-10 h-10 rounded-xl bg-emerald-700 text-amber-300 font-black text-xl flex items-center justify-center shadow-md">
+          مـ
+        </span>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-black text-lg text-slate-900">مُبْـدِعْ</span>
+            <span class="text-[9px] bg-amber-100 text-amber-900 border border-amber-300 px-1.5 py-0.5 rounded font-bold">لعلوم الضاد</span>
+          </div>
+          <span class="text-[10px] text-slate-500 block font-semibold">إشراف وتأسيس: <strong class="text-emerald-800">أ. محمد السنوسي</strong></span>
+        </div>
+      </div>
+      <a href="#subscribe" class="text-xs bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-3.5 py-2 rounded-xl shadow-xs transition">
+        الاشتراك والسداد
+      </a>
+    </div>
+  </header>
+
+  <!-- واجهة التقديم -->
+  <section class="max-w-4xl mx-auto px-4 pt-8 pb-6 text-center space-y-3">
+    <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-full text-xs font-bold">
+      ✨ المنصة التعليمية الأولى لجميع المناهج المصرية
+    </div>
+    <h1 class="text-2xl sm:text-4xl font-black text-slate-900 leading-snug">
+      تَعَلَّمِ اللُّغَةَ العَرَبِيَّةَ بِأُسْلُوبٍ <span class="text-emerald-700">تَفَاعُلِيٍّ ذَكِيّ</span>
+    </h1>
+    <p class="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+      شروحات مبسطة، محاكي امتحانات الثانوية العامة بالبابل شيت، وحل أسرار النحو مع الأستاذ محمد السنوسي.
+    </p>
+  </section>
+
+  <!-- ركن الثانوية العامة وتحدي النحو -->
+  <section class="max-w-2xl mx-auto px-4 mb-8">
+    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+      <div class="flex items-center justify-between border-b pb-3">
+        <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg">تحدي النحو الوزاري</span>
+        <span class="text-xs text-slate-400 font-mono">+25 نقطة XP</span>
+      </div>
+
+      <div class="p-4 bg-slate-50 rounded-2xl text-center border border-slate-100">
+        <span class="text-xs text-slate-400 block mb-1">شاهد من امتحانات الثانوية العامة:</span>
+        <h3 class="text-base sm:text-lg font-bold text-slate-900">
+          « كَتَبَ الطَّالِبُ القِصَّةَ <span class="text-emerald-700 underline font-black">بِإِبْدَاعٍ</span> »
+        </h3>
+      </div>
+
+      <p class="text-xs font-bold text-slate-700">ما الإعراب الصحيح للتركيب المحدد في الجملة؟</p>
+
+      <div class="space-y-2 text-xs" id="quiz-options">
+        <button onclick="checkAnswer(this, false)" class="w-full text-right p-3 rounded-xl border border-slate-200 hover:border-emerald-500 bg-white transition flex justify-between">
+          <span>مفعول به منصوب بالفتحة</span>
+          <span class="text-slate-300">#1</span>
+        </button>
+        <button onclick="checkAnswer(this, true)" class="w-full text-right p-3 rounded-xl border border-slate-200 hover:border-emerald-500 bg-white transition flex justify-between">
+          <span>شبه جملة (جار ومجرور) متعلق بمحذوف حال</span>
+          <span class="text-slate-300">#2</span>
+        </button>
+        <button onclick="checkAnswer(this, false)" class="w-full text-right p-3 rounded-xl border border-slate-200 hover:border-emerald-500 bg-white transition flex justify-between">
+          <span>مفعول مطلق منصوب بالفتحة</span>
+          <span class="text-slate-300">#3</span>
+        </button>
+      </div>
+
+      <div id="quiz-result" class="hidden p-4 rounded-2xl text-xs space-y-1"></div>
+    </div>
+  </section>
+
+  <!-- باقات الاشتراك والسداد عبر كاش وانستاباي -->
+  <section id="subscribe" class="max-w-2xl mx-auto px-4 mb-8">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl space-y-5">
+      <div class="text-center space-y-1 border-b pb-4">
+        <span class="text-xs bg-amber-100 text-amber-900 px-3 py-1 rounded-full font-bold">باقات الترم الدراسي الجديد</span>
+        <h3 class="text-xl font-black text-slate-900 mt-2">الاشتراك وتفعيل الحساب فورياً</h3>
+        <p class="text-xs text-slate-500">سدد رسوم الباقة عبر فودافون كاش أو انستاباي وسنُفعّل حسابك في دقائق</p>
+      </div>
+
+      <div class="p-6 bg-slate-950 text-white rounded-3xl text-center space-y-3">
+        <span class="text-xs text-amber-300 font-bold block">رقم التحويل المعتمد (محافظ كاش & انستاباي):</span>
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-3xl sm:text-4xl font-mono font-black tracking-widest text-emerald-400 select-all">
+            01062650131
+          </span>
+          <button onclick="copyNumber()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white text-xs rounded-xl border border-slate-700 transition">
+            نسخ
+          </button>
+        </div>
+        <p class="text-xs text-slate-400">الاسم المسجل للحساب: <strong class="text-slate-200">الأستاذ محمد السنوسي</strong></p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 text-xs">
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-2xl text-center">
+          <span class="text-slate-400 block font-semibold text-[10px]">اشتراك شهري:</span>
+          <span class="text-base font-black text-slate-900 font-mono">180 ج.م</span>
+        </div>
+        <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-2xl text-center">
+          <span class="text-emerald-800 block font-semibold text-[10px]">ترم كامل (الأكثر اختياراً):</span>
+          <span class="text-base font-black text-emerald-950 font-mono">810 ج.م</span>
+        </div>
+      </div>
+
+      <form onsubmit="sendPaymentConfirmation(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">اسم الطالب رباعياً:</label>
+          <input type="text" id="student-name" placeholder="مثال: أحمد محمود إبراهيم" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600" required>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">الرقم أو الحساب الذي قمت بالتحويل منه:</label>
+          <input type="text" id="sender-number" placeholder="مثال: 010xxxxxxxx أو اسم انستاباي" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 font-mono" required>
+        </div>
+        <button type="submit" class="w-full py-3.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-bold text-sm transition shadow-md flex items-center justify-center gap-1.5">
+          <span>إرسال إشعار السداد لواتساب أ. محمد السنوسي والتفعيل</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- التذييل الرسمي -->
+  <footer class="max-w-4xl mx-auto px-4 text-center text-xs text-slate-400 space-y-1">
+    <p>جميع الحقوق محفوظة © لمنصة مُبدِع لعلوم الضاد</p>
+    <p class="font-bold text-emerald-800">رؤية وإشراف وإدارة: الأستاذ محمد السنوسي (01062650131)</p>
+  </footer>
+
+  <script>
+    function checkAnswer(btn, isCorrect) {
+      const resultDiv = document.getElementById("quiz-result");
+      resultDiv.classList.remove("hidden", "bg-emerald-50", "bg-rose-50", "border-emerald-200", "border-rose-200");
+      if (isCorrect) {
+        btn.classList.add("bg-emerald-100", "border-emerald-500", "font-bold", "text-emerald-950");
+        resultDiv.classList.add("bg-emerald-50", "border", "border-emerald-200", "text-emerald-900");
+        resultDiv.innerHTML = "🎉 <strong>إجابة صحيحة وممتازة!</strong> (بإبداع) شبه جملة متعلقة بمحذوف حال يبين هيئة كتابة القصة.";
+        confetti({ particleCount: 70, spread: 60, origin: { y: 0.6 } });
+      } else {
+        btn.classList.add("bg-rose-50", "border-rose-300", "text-rose-900");
+        resultDiv.classList.add("bg-rose-50", "border", "border-rose-200", "text-rose-900");
+        resultDiv.innerHTML = "💡 <strong>إجابة غير دقيقة!</strong> الإجابة الصحيحة هي: شبه جملة في محل نصب حال.";
+      }
+    }
+
+    function copyNumber() {
+      navigator.clipboard.writeText("01062650131");
+      alert("تم نسخ الرقم بنجاح: 01062650131");
+    }
+
+    function sendPaymentConfirmation(e) {
+      e.preventDefault();
+      const name = document.getElementById("student-name").value;
+      const sender = document.getElementById("sender-number").value;
+      const text = encodeURIComponent(
+        `السلام عليكم أ. محمد السنوسي 🌿\n\n` +
+        `أنا الطالب: (${name})\n` +
+        `قمت بالتحويل للاشتراك في منصة «مُبدِع» لعلوم الضاد.\n` +
+        `• الحساب المحول منه: ${sender}\n` +
+        `• المحول إليه: 01062650131\n\n` +
+        `برجاء تفعيل حسابي.`
+      );
+      window.open(`https://wa.me/201062650131?text=${text}`, "_blank");
+    }
+  </script>
+</body>
+</html>

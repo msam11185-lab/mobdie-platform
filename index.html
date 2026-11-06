@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>منصة مُبدِع | المناهج المصرية المطورة 2026-2027 - أ. محمد السنوسي</title>
-  <!-- خط Cairo وتنسيقات Tailwind ومكتبة المؤثرات التفاعلية -->
+  <title>منصة مُبدِع | لعلوم الضاد - أ. محمد السنوسي</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -16,7 +15,7 @@
 </head>
 <body class="text-slate-900 pb-24 select-none">
 
-  <!-- ================= 1. الترويسة والشعار الرسمي ================= -->
+  <!-- ================= 1. الترويسة والشعار ================= -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 px-4 py-3 shadow-xs">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
@@ -26,29 +25,67 @@
         <div>
           <div class="flex items-center gap-1.5">
             <span class="font-black text-lg text-slate-900">مُبْـدِعْ</span>
-            <span class="text-[9px] bg-emerald-100 text-emerald-900 border border-emerald-300 px-1.5 py-0.5 rounded font-bold">مناهج مصر 2026 / 2027</span>
+            <span class="text-[9px] bg-emerald-100 text-emerald-900 border border-emerald-300 px-1.5 py-0.5 rounded font-bold">المناهج المطورة 2026/2027</span>
           </div>
           <span class="text-[10px] text-slate-500 block font-semibold">إشراف وتأسيس: <strong class="text-emerald-800">أ. محمد السنوسي</strong></span>
         </div>
       </div>
 
       <div class="flex items-center gap-2">
+        <button onclick="toggleAdminPanel()" class="text-xs bg-slate-900 hover:bg-slate-800 text-amber-300 font-bold px-3 py-2 rounded-xl transition flex items-center gap-1.5 shadow-xs">
+          <span>لوحة المؤسس</span>
+          <span>🔐</span>
+        </button>
         <a href="#subscribe" class="text-xs bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-3.5 py-2 rounded-xl shadow-xs transition">
-          💳 الاشتراك وكروت الشحن
+          💳 الاشتراك والسداد
         </a>
       </div>
     </div>
   </header>
 
-  <!-- ================= 2. البوابة التعليمية الشاملة ================= -->
+  <!-- ================= نافذة لوحة تحكم المؤسس المعتمدة ================= -->
+  <div id="admin-panel-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl p-6 md:p-8 border border-slate-200 shadow-2xl space-y-6">
+      <div class="flex items-center justify-between border-b pb-4">
+        <div>
+          <span class="text-[10px] bg-amber-100 text-amber-900 px-2 py-0.5 rounded font-bold">كنترول الإدارة العامة</span>
+          <h2 class="text-xl font-black text-slate-900 mt-1">لوحة إدارة «مُبدِع» — أ. محمد السنوسي</h2>
+        </div>
+        <button onclick="toggleAdminPanel()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-rose-100 hover:text-rose-600 font-bold flex items-center justify-center">✕</button>
+      </div>
+
+      <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-2xl flex justify-between items-center text-xs">
+        <div>
+          <span class="font-bold text-emerald-950 block">الحساب المعتمد للسداد الفوري:</span>
+          <span class="text-xs text-emerald-800 font-mono font-bold">فودافون كاش & انستاباي: 01062650131</span>
+        </div>
+        <span class="text-[11px] bg-emerald-200 text-emerald-950 px-2.5 py-1 rounded-lg font-bold">الحساب نشط ✓</span>
+      </div>
+
+      <div class="space-y-2 text-xs">
+        <h4 class="font-bold text-slate-800 text-sm">حوالات المشتركين الواردة للمطابقة والتفعيل:</h4>
+        <div class="p-4 bg-slate-50 rounded-2xl border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+          <div>
+            <span class="font-bold text-slate-900 text-sm block">إسلام عادل مصطفى</span>
+            <span class="text-slate-500 text-[11px]">باقة: الترم الكامل (810 ج.م) • محول عبر انستاباي من 010xxxxxxxx</span>
+          </div>
+          <button onclick="this.innerText='تم التفعيل ✓'; this.className='px-5 py-2.5 bg-slate-200 text-emerald-800 rounded-xl font-bold';" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold shadow-xs">
+            تأكيد وتفعيل الحساب
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 2. المنظومة التعليمية المتكاملة ================= -->
   <main class="max-w-5xl mx-auto px-4 mt-6 space-y-6">
     
-    <!-- لافتة الترحيب بالمناهج الجديدة -->
+    <!-- لافتة الترحيب المحدثة -->
     <div class="bg-gradient-to-r from-emerald-950 via-emerald-900 to-slate-950 text-white p-6 rounded-3xl shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
       <div class="space-y-1">
-        <span class="text-[10px] bg-amber-400 text-slate-950 px-2.5 py-0.5 rounded-full font-black">محدث وفق خطة وزارة التربية والتعليم المصرية 2026-2027</span>
-        <h2 class="text-xl md:text-2xl font-black text-slate-100">بوابة المناهج التعليمية المتطورة لجميع الصفوف 🌟</h2>
-        <p class="text-xs text-emerald-200">شروحات تطبيقية، نواتج تعلم، وتدريب حي على مواصفات الامتحانات الحديثة</p>
+        <span class="text-[10px] bg-amber-400 text-slate-950 px-2.5 py-0.5 rounded-full font-black">الحقيبة التعليمية الذكية الشاملة لعام 2026 / 2027</span>
+        <h2 class="text-xl md:text-2xl font-black text-slate-100">كل درس: شرح + خريطة ذهنية + ملزمة + تدريب تفاعلي 🌟</h2>
+        <p class="text-xs text-emerald-200">صُممت لضمان الدرجة النهائية وسهولة التعلم للطالب وولي الأمر</p>
       </div>
 
       <div class="flex items-center gap-2 text-xs">
@@ -56,215 +93,175 @@
           <span class="text-[10px] text-amber-300 block font-bold">الدرجة النهائية</span>
           <span class="text-lg font-mono font-black text-white">80/80 🎯</span>
         </div>
-        <div class="p-3 bg-white/10 rounded-2xl border border-white/15 text-center">
-          <span class="text-[10px] text-emerald-300 block font-bold">التحديث</span>
-          <span class="font-bold text-emerald-200">دفعة 2026/2027</span>
-        </div>
       </div>
     </div>
 
-    <!-- شريط اختيار المرحلة والصف الدراسي بدقة تامة -->
-    <div class="flex flex-wrap items-center gap-2 p-2.5 bg-white rounded-2xl border border-slate-200 text-xs font-bold shadow-xs">
-      <span class="text-slate-400 mr-2 text-[11px]">اختر الصف الدراسي:</span>
+    <!-- شريط المراحل الدراسية -->
+    <div class="flex flex-wrap items-center gap-2 p-2 bg-white rounded-2xl border border-slate-200 text-xs font-bold shadow-xs">
+      <span class="text-slate-400 mr-2 text-[11px]">الصف الدراسي:</span>
       <button onclick="switchGradeTab('sec3')" id="tab-sec3" class="px-3.5 py-2 rounded-xl bg-emerald-700 text-white transition">🎓 الثالث الثانوي (البكالوريا)</button>
       <button onclick="switchGradeTab('prep3')" id="tab-prep3" class="px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">📝 الثالث الإعدادي (المحافظات)</button>
-      <button onclick="switchGradeTab('prim6')" id="tab-prim6" class="px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">🎒 السادس الابتدائي (Edu 2.0)</button>
-      <button onclick="switchGradeTab('kg')" id="tab-kg" class="px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">🧸 التأسيس والبراعم (KG)</button>
-      <button onclick="switchGradeTab('tools')" id="tab-tools" class="px-3.5 py-2 rounded-xl bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200 transition">⚙️ مشجر الإعراب الذكي</button>
+      <button onclick="switchGradeTab('prim6')" id="tab-prim6" class="px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">🎒 الابتدائي المطور (Edu 2.0)</button>
+      <button onclick="switchGradeTab('parent')" id="tab-parent" class="px-3.5 py-2 rounded-xl bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200 transition">👨‍👩‍👧‍👦 بوابة ولي الأمر</button>
     </div>
 
-    <!-- ================= 1. محتوى الصف الثالث الثانوي المطور 2026-2027 ================= -->
+    <!-- ================= نموذج الدرس الشامل (الحقيبة الخماسية للثانوية العامة) ================= -->
     <div id="content-sec3" class="space-y-6">
-      <!-- فهرس ونواتج تعلم الثانوية العامة -->
-      <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4 shadow-sm">
-        <div class="flex justify-between items-center border-b pb-3 text-xs">
-          <div>
-            <span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">نظام التقييم الحديث 2026-2027</span>
-            <h3 class="text-base font-black text-slate-900 mt-1">خارطة فروع اللغة العربية للشهادة الثانوية العامة (80 درجة)</h3>
-          </div>
-          <span class="text-xs bg-slate-900 text-amber-300 px-3 py-1 rounded-xl font-bold">مواصفات الوزارة</span>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-          <div class="p-4 bg-slate-50 rounded-2xl border space-y-1">
-            <span class="font-bold text-emerald-800 block text-sm">1. النحو (20 درجة):</span>
-            <p class="text-slate-600 leading-relaxed">الوحدات السبع + الملحقات، إعمال المشتقات، المصادر، الأساليب، والتوابع.</p>
-          </div>
-          <div class="p-4 bg-slate-50 rounded-2xl border space-y-1">
-            <span class="font-bold text-blue-800 block text-sm">2. القراءة والنصوص (34 درجة):</span>
-            <p class="text-slate-600 leading-relaxed">نصوص متحررة نثرية وشعرية تقيس المغزى الضمني والعلاقات البلاغية ونقد الأفكار.</p>
-          </div>
-          <div class="p-4 bg-slate-50 rounded-2xl border space-y-1">
-            <span class="font-bold text-amber-800 block text-sm">3. الأدب والبلاغة والتعبير (26 درجة):</span>
-            <p class="text-slate-600 leading-relaxed">مدارس الشعر الست، قصة الأيام لطه حسين، والتعبير المقالي بنموذج الكنترول.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- تريكة نواتج التعلم لنحو الثانوية العامة مع السؤال التفاعلي -->
-      <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4 shadow-sm">
-        <div class="flex justify-between items-center border-b pb-3 text-xs">
-          <span class="font-bold text-slate-800">تطبيق نواتج التعلم: إعمال المصادر والمشتقات</span>
-          <span class="text-emerald-700 font-bold bg-emerald-50 px-2.5 py-1 rounded-lg">+30 نقطة XP</span>
-        </div>
-
-        <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl font-serif text-sm sm:text-base font-bold text-slate-900 text-center leading-relaxed">
-          قال الشاعر: «أَحَقّاً عِبَادَ اللهِ أَنْ لَسْتُ سَامِعاً .. نَشِيداً مِنَ الرَّاعِي <span class="text-emerald-700 underline font-black">يَهُزُّ</span> فُؤَادِيَا»
-        </div>
-
-        <p class="text-xs font-bold text-slate-800">ميز المحل الإعرابي لجملة (يَهُزُّ فُؤَادِيَا) في البيت السابق:</p>
-
-        <div class="space-y-2 text-xs">
-          <button onclick="checkSecAnswer(this, true, 'جملة (يهز فؤاديا) في محل نصب نعت لكلمة (نشيداً) المنصوبة؛ لأن الجمل بعد النكرات صفات.')" class="w-full p-3.5 rounded-xl border border-slate-200 hover:border-emerald-500 bg-white transition text-right flex justify-between">
-            <span>في محل نصب نعت (صفة) لكلمة نشيداً</span>
-            <span class="text-slate-400 font-mono">(A)</span>
-          </button>
-          <button onclick="checkSecAnswer(this, false, '')" class="w-full p-3.5 rounded-xl border border-slate-200 hover:border-emerald-500 bg-white transition text-right flex justify-between">
-            <span>في محل نصب حال لكلمة الراعي</span>
-            <span class="text-slate-400 font-mono">(B)</span>
-          </button>
-          <button onclick="checkSecAnswer(this, false, '')" class="w-full p-3.5 rounded-xl border border-slate-200 hover:border-emerald-500 bg-white transition text-right flex justify-between">
-            <span>في محل رفع خبر لـ (ليس)</span>
-            <span class="text-slate-400 font-mono">(C)</span>
-          </button>
-        </div>
-
-        <div id="sec-feedback" class="hidden p-4 rounded-2xl text-xs space-y-1"></div>
-      </div>
-
-      <!-- مختبر البلاغة الحديثة: الصورة المركبة والممتدة -->
-      <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4 shadow-sm text-xs leading-relaxed">
-        <h4 class="font-bold text-slate-900 text-sm border-b pb-2 flex items-center gap-1.5">
-          <span>🎨</span>
-          <span>شفرات البلاغة الحديثة للثانوية العامة 2026/2027:</span>
-        </h4>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div class="p-4 bg-emerald-50/60 rounded-2xl border border-emerald-100 space-y-1.5">
-            <span class="font-bold text-emerald-950 block text-xs">1. الصورة المركبة المتداخلة:</span>
-            <p class="text-slate-700">اشتراك كلمة واحدة بين صورتين بيانيتين؛ كقول شوقي: «عَصَفَتْ كَالصَّبَا اللَّعُوبِ»؛ كلمة (الصَّبَا) مشبه به في التشبيه الأول، ومشبه في الاستعارة المكنية الثانية.</p>
-          </div>
-
-          <div class="p-4 bg-blue-50/60 rounded-2xl border border-blue-100 space-y-1.5">
-            <span class="font-bold text-blue-950 block text-xs">2. الصورة الممتدة (ترشيح وتجريد):</span>
-            <p class="text-slate-700">المشبه واحد وتتعدد صفات المشبه به (ترشيح يقوي المعنى): «الجيش لَيْثٌ يفترس ويزأر». أو تتعدد صفات المشبه نفسه (تجريد يُضعف الخيال).</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ================= 2. محتوى الشهادة الإعدادية 2026-2027 ================= -->
-    <div id="content-prep3" class="hidden space-y-6">
-      <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4 shadow-sm text-xs leading-relaxed">
-        <div class="flex justify-between items-center border-b pb-3">
-          <span class="text-xs bg-blue-50 text-blue-800 font-bold px-3 py-1 rounded-full">الصف الثالث الإعدادي المطور</span>
-          <span class="text-slate-400">تريكات امتحانات المحافظات 2026/2027</span>
-        </div>
-
-        <h3 class="text-base font-black text-slate-900">بنك أسرار وفخاخ النحو الإجباري:</h3>
-
-        <div class="space-y-3">
-          <div class="p-4 bg-slate-50 rounded-2xl border space-y-1">
-            <span class="font-bold text-emerald-800 text-sm">فخ إعراب (المخصوص بالمدح والذم مع نِعْمَ وبِئْسَ):</span>
-            <p class="text-slate-700">
-              «نِعْمَ الصِّفَةُ الأَمَانَةُ» ⇦ (الأمانة): لها وجهان إعرابيان جائزان: مبتدأ مؤخر جوازاً مرفوع بالضمة، أو خبر لمبتدأ محذوف وجوباً تقديره (هي).
-            </p>
-          </div>
-
-          <div class="p-4 bg-slate-50 rounded-2xl border space-y-1">
-            <span class="font-bold text-amber-800 text-sm">فخ جر الممنوع من الصرف بالفتحة والكسرة:</span>
-            <p class="text-slate-700">
-              يُجر بالفتحة إذا كان مجرداً من (أل) والإضافة: «صَلَّيْتُ فِي مَسَاجِدَ أَثَرِيَّةٍ»، ويُجر بالكسرة إذا عُرّف بـ (أل) أو أُضيف: «صَلَّيْتُ فِي مَسَاجِدِ المَدِينَةِ» أو «فِي المَسَاجِدِ».
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ================= 3. محتوى المرحلة الابتدائية (التعليم المطور Edu 2.0) ================= -->
-    <div id="content-prim6" class="hidden space-y-6">
-      <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4 shadow-sm text-xs leading-relaxed">
-        <div class="flex justify-between items-center border-b pb-3">
-          <span class="text-xs bg-amber-50 text-amber-800 font-bold px-3 py-1 rounded-full">الصفوف (4 - 6 ابتدائي Edu 2.0)</span>
-          <span class="text-slate-400">المهام الأدائية والتعبير الكتابي المطور</span>
-        </div>
-
-        <h3 class="text-base font-black text-slate-900">نماذج المهام الأدائية المقررة للتعبير الكتابي:</h3>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-1">
-            <span class="font-bold text-emerald-950 block text-sm">1. كتابة المطوية الإرشادية:</span>
-            <p class="text-slate-700 font-serif">تتكون من 4 أعمدة رئيسية: (الغلاف والعنوان، هل تعلم، ماذا لو، ويجب علينا) مع مراعاة علامات الترقيم.</p>
-          </div>
-          <div class="p-4 bg-blue-50 rounded-2xl border border-blue-200 space-y-1">
-            <span class="font-bold text-blue-950 block text-sm">2. كتابة النص المعلوماتي والمقال:</span>
-            <p class="text-slate-700 font-serif">يتكون من: (المقدمة العامة، الفكر الرئيسية المدعومة بحقائق علمية، والخاتمة التي تقدم نصيحة وتوصية للقارئ).</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ================= 4. محتوى رياض الأطفال والتأسيس المبكر ================= -->
-    <div id="content-kg" class="hidden space-y-6 text-center">
-      <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4 shadow-sm">
-        <span class="text-xs bg-rose-50 text-rose-800 font-bold px-3 py-1 rounded-full">مرحلة الطفولة المبكرة (KG1 - KG2)</span>
-        <h3 class="text-lg font-black text-slate-900">شبكة الوعي الصوتي والحركات التفاعلية</h3>
+      
+      <!-- كارت الدرس المختار -->
+      <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
         
-        <p class="text-xs text-slate-500 max-w-md mx-auto">التمييز بين الحركات القصيرة والمدود الطويلة بصوت وصورة:</p>
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b pb-4">
+          <div>
+            <span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md">الوحدة الثانية: الأبنية والاشتقاق (2026/2027)</span>
+            <h3 class="text-lg font-black text-slate-900 mt-1">الدرس الأول: إعمال المشتقات وتريكات اسم الفاعل والمفعول</h3>
+          </div>
+          <span class="text-xs bg-slate-900 text-amber-300 font-bold px-3 py-1.5 rounded-xl">حقيبة الدرس المتكاملة</span>
+        </div>
 
-        <div class="grid grid-cols-3 gap-3 max-w-lg mx-auto pt-2">
-          <div class="p-4 bg-emerald-100 rounded-2xl text-emerald-950 font-serif font-black space-y-1">
-            <span class="text-3xl block">أَ</span>
-            <span class="text-xs font-sans font-bold">أَسَد 🦁 (فتحة)</span>
+        <!-- أزرار تبديل أركان الدرس الخمسة -->
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs font-bold text-center">
+          <button onclick="switchLessonPart('video')" id="lpart-btn-video" class="p-3 rounded-xl bg-emerald-700 text-white transition shadow-xs">
+            🎥 الشرح المرئي
+          </button>
+          <button onclick="switchLessonPart('mindmap')" id="lpart-btn-mindmap" class="p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            🧠 الخريطة الذهنية
+          </button>
+          <button onclick="switchLessonPart('slides')" id="lpart-btn-slides" class="p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            📊 شرائح العرض
+          </button>
+          <button onclick="switchLessonPart('pdf')" id="lpart-btn-pdf" class="p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            📄 ملزمة الدرس (PDF)
+          </button>
+          <button onclick="switchLessonPart('quiz')" id="lpart-btn-quiz" class="p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            🎯 اختبار تفاعلي
+          </button>
+        </div>
+
+        <!-- 1. ركن الشرح المرئي والفيديو المحمي -->
+        <div id="lpart-video" class="space-y-3">
+          <div class="relative aspect-video bg-black rounded-2xl overflow-hidden border border-slate-800 shadow-md">
+            <video 
+              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" 
+              controls 
+              controlsList="nodownload"
+              class="w-full h-full object-contain"
+            ></video>
+            <!-- علامة مائية لحظر التصوير -->
+            <div class="absolute top-4 left-4 bg-black/60 text-white/70 text-[10px] font-mono px-3 py-1 rounded-lg border border-white/10 pointer-events-none">
+              طالب مشترك • 010xxxxxxxx • أ. محمد السنوسي
+            </div>
           </div>
-          <div class="p-4 bg-blue-100 rounded-2xl text-blue-950 font-serif font-black space-y-1">
-            <span class="text-3xl block">أُ</span>
-            <span class="text-xs font-sans font-bold">أُذُن 👂 (ضمة)</span>
+          <p class="text-xs text-slate-500 text-center font-semibold">المحاضرة مشروحة بنظام نواتج التعلم الحديثة للأستاذ محمد السنوسي (45 دقيقة).</p>
+        </div>
+
+        <!-- 2. ركن الخريطة الذهنية البصرية -->
+        <div id="lpart-mindmap" class="hidden p-6 bg-gradient-to-br from-emerald-50 via-teal-50 to-white rounded-2xl border-2 border-emerald-200 space-y-4">
+          <div class="text-center space-y-1">
+            <h4 class="font-black text-emerald-950 text-base">خارطة إعمال اسم الفاعل الذهنية 🧠</h4>
+            <p class="text-xs text-slate-500">مخطط بصري يرسخ شروط العمل في ثوانٍ معدودة</p>
           </div>
-          <div class="p-4 bg-rose-100 rounded-2xl text-rose-950 font-serif font-black space-y-1">
-            <span class="text-3xl block">إِ</span>
-            <span class="text-xs font-sans font-bold">إِبْرِيق 🫖 (كسرة)</span>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="p-4 bg-white rounded-xl border border-emerald-100 shadow-xs space-y-2">
+              <span class="font-bold text-emerald-800 block text-sm border-b pb-1">الحالة 1: المقترن بـ (أل)</span>
+              <p class="text-slate-700">يعمل بلا أي شروط، سواء دل على الحال أو الاستقبال أو الماضي: «جَاءَ المُكْرِمُ ضَيْفَهُ أَمْسِ» ⇦ (ضيفه): مفعول به منصوب لاسم الفاعل.</p>
+            </div>
+
+            <div class="p-4 bg-white rounded-xl border border-emerald-100 shadow-xs space-y-2">
+              <span class="font-bold text-blue-800 block text-sm border-b pb-1">الحالة 2: المجرد من (أل)</span>
+              <p class="text-slate-700">يعمل بشرطين: 1. يدل على الحال أو الاستقبال (منوّن). 2. يعتمد على (مبتدأ، نفي، استفهام، نداء، أو موصوف): «مَا مُضَيِّعٌ أَوْقَاتَهُ إِلَّا الكَسُولُ».</p>
+            </div>
           </div>
         </div>
+
+        <!-- 3. ركن شرائح العرض التقديمي (Slides) -->
+        <div id="lpart-slides" class="hidden p-8 bg-slate-900 text-white rounded-2xl text-center space-y-4">
+          <span class="text-xs bg-amber-400 text-slate-950 px-3 py-1 rounded-full font-black">الشريحة 1 من 4: التريكة الكبرى</span>
+          <h4 class="text-xl font-bold font-serif text-amber-100 py-2">
+            « إِذَا نُوِّنَ اسْمُ الفَاعِلِ نَصَبَ مَفْعُولاً .. وَإِنْ حُذِفَ التَّنْوِينُ جَرَّ مُضَافاً إِلَيْهِ »
+          </h4>
+          <div class="grid grid-cols-2 gap-3 text-xs pt-2 max-w-md mx-auto">
+            <div class="p-3 bg-slate-800 rounded-xl border border-slate-700">
+              <span class="font-bold text-emerald-400 block">مع التنوين (عامل):</span>
+              <p class="mt-1">«المعلمُ شارحٌ الدرسَ» ⇦ الدرسَ: مفعول به منصوب بالفتحة.</p>
+            </div>
+            <div class="p-3 bg-slate-800 rounded-xl border border-slate-700">
+              <span class="font-bold text-rose-400 block">بدون تنوين (غير عامل):</span>
+              <p class="mt-1">«المعلمُ شارحُ الدرسِ» ⇦ الدرسِ: مضاف إليه مجرور بالكسرة.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. ركن ملزمة الدرس للتحميل والطباعة (PDF) -->
+        <div id="lpart-pdf" class="hidden p-8 bg-slate-50 border-2 border-dashed border-slate-300 rounded-2xl text-center space-y-4">
+          <div class="w-16 h-16 bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center mx-auto text-2xl font-black">
+            📄
+          </div>
+          <div>
+            <h4 class="font-black text-slate-900 text-base">ملزمة الشرح وتطبيقات الواجب (دفعة 2026/2027)</h4>
+            <p class="text-xs text-slate-500 mt-1">مذكرة ملونة بصيغة PDF جاهزة للطباعة تتضمن 150 سؤال بابل شيت ومقالي.</p>
+          </div>
+          <button onclick="alert('جارٍ تنزيل مذكرة الأستاذ محمد السنوسي على جهازك الآن بصيغة PDF عالية الدقة...')" class="px-6 py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold transition shadow-sm">
+            تحميل المذكرة الآن (PDF)
+          </button>
+        </div>
+
+        <!-- 5. ركن الاختبار التفاعلي الذكي -->
+        <div id="lpart-quiz" class="hidden space-y-4">
+          <div class="p-4 bg-slate-50 border rounded-2xl text-center font-serif text-sm font-bold text-slate-900">
+            « مَا رَافِعٌ <span class="text-emerald-700 underline font-black">رَايَةَ</span> الشَّوْرَى إِلَّا حُرٌّ »
+          </div>
+
+          <p class="text-xs font-bold text-slate-800">ميز الإعراب الصحيح لكلمة (رَايَةَ):</p>
+
+          <div class="space-y-2 text-xs">
+            <button onclick="checkPartQuiz(this, true, 'مفعول به لاسم الفاعل العامل (رافع) المعتمد على نفي، والفاعل المؤخر هو (حر).')" class="w-full p-3.5 rounded-xl border border-slate-200 hover:border-emerald-500 bg-white transition text-right flex justify-between">
+              <span>مفعول به لاسم الفاعل منصوب وعلامة نصبه الفتحة</span>
+              <span class="text-slate-400 font-mono">(A)</span>
+            </button>
+            <button onclick="checkPartQuiz(this, false, '')" class="w-full p-3.5 rounded-xl border border-slate-200 hover:border-emerald-500 bg-white transition text-right flex justify-between">
+              <span>فاعل مرفوع لاسم الفاعل بالضمة</span>
+              <span class="text-slate-400 font-mono">(B)</span>
+            </button>
+          </div>
+
+          <div id="quiz-part-feedback" class="hidden p-4 rounded-2xl text-xs space-y-1"></div>
+        </div>
+
       </div>
     </div>
 
-    <!-- ================= 5. مشجر الإعراب التفاعلي الحي ================= -->
-    <div id="content-tools" class="hidden space-y-6">
-      <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4 shadow-sm">
-        <div class="flex justify-between items-center border-b pb-3 text-xs">
-          <span class="font-bold text-slate-800">مشجر الإعراب البصري لطلاب مصر:</span>
-          <span class="text-slate-400">اضغط على أي كلمة من الجملة لإعرابها وتحديد علاقتها</span>
-        </div>
+    <!-- ================= محتوى بوابة ولي الأمر ================= -->
+    <div id="content-parent" class="hidden bg-white p-6 md:p-8 rounded-3xl border border-slate-200 space-y-4 shadow-sm text-xs">
+      <div class="border-b pb-3">
+        <span class="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded">بوابة ولي الأمر</span>
+        <h3 class="text-base font-black text-slate-900 mt-1">متابعة مستوى ونشاط الطالب الدراسي بسهولة</h3>
+      </div>
 
-        <div class="flex flex-wrap items-center justify-center gap-2.5 p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <button onclick="parseWord('يَبْنِي', 'فعل مضارع مرفوع وعلامة رفعه الضمة المقدرة على الياء للثقل.')" class="px-4 py-2.5 bg-white hover:bg-emerald-50 border-2 border-slate-200 hover:border-emerald-600 rounded-xl font-bold font-serif text-base transition">
-            يَبْنِي
-          </button>
-          <button onclick="parseWord('المُعَلِّمُ', 'فاعل مرفوع وعلامة رفعه الضمة الظاهرة على آخره (هو من قام بالفعل).')" class="px-4 py-2.5 bg-white hover:bg-emerald-50 border-2 border-slate-200 hover:border-emerald-600 rounded-xl font-bold font-serif text-base transition">
-            المُعَلِّمُ
-          </button>
-          <button onclick="parseWord('عُقُولَ', 'مفعول به منصوب وعلامة نصبه الفتحة الظاهرة وهو مضاف (وقع عليه فعل البناء).')" class="px-4 py-2.5 bg-white hover:bg-emerald-50 border-2 border-slate-200 hover:border-emerald-600 rounded-xl font-bold font-serif text-base transition">
-            عُقُولَ
-          </button>
-          <button onclick="parseWord('الشَّبَابِ', 'مضاف إليه مجرور وعلامة جره الكسرة الظاهرة تحت آخره (يوضح ويخصص عقول).')" class="px-4 py-2.5 bg-white hover:bg-emerald-50 border-2 border-slate-200 hover:border-emerald-600 rounded-xl font-bold font-serif text-base transition">
-            الشَّبَابِ
-          </button>
-          <button onclick="parseWord('بِإِخْلَاصٍ', 'شبه جملة (الباء حرف جر، إخلاص اسم مجرور) متعلق بمحذوف حال يبين هيئة المعلم أثناء البناء.')" class="px-4 py-2.5 bg-white hover:bg-emerald-50 border-2 border-slate-200 hover:border-emerald-600 rounded-xl font-bold font-serif text-base transition">
-            بِإِخْلَاصٍ
-          </button>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
+        <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-2xl">
+          <span class="text-slate-400 block text-[10px]">نسبة إنجاز المنهج:</span>
+          <span class="text-xl font-black text-emerald-950 font-mono">85%</span>
         </div>
-
-        <div id="parse-display-box" class="p-4 bg-emerald-50 border border-emerald-200 rounded-2xl text-xs space-y-1">
-          <span class="font-bold text-emerald-950 block text-sm" id="parse-title">اضغط على أي كلمة من الجملة أعلاه</span>
-          <p class="text-slate-700 leading-relaxed font-serif" id="parse-desc">سيظهر لك إعرابها وموقعها التركيبي هنا فوراً.</p>
+        <div class="p-4 bg-blue-50 border border-blue-200 rounded-2xl">
+          <span class="text-slate-400 block text-[10px]">متوسط درجات الاختبارات:</span>
+          <span class="text-xl font-black text-blue-950 font-mono">94%</span>
+        </div>
+        <div class="p-4 bg-amber-50 border border-amber-200 rounded-2xl">
+          <span class="text-slate-400 block text-[10px]">الالتزام والانتظام:</span>
+          <span class="text-sm font-black text-amber-950">ممتاز جداً 🔥</span>
         </div>
       </div>
+
+      <p class="text-slate-600 text-center pt-2">
+        لأي استفسار بخصوص مستوى ابنكم، يمكنكم مراسلة الأستاذ محمد السنوسي مباشرة على: <strong class="text-emerald-800 font-mono">01062650131</strong>
+      </p>
     </div>
 
   </main>
 
-  <!-- ================= 3. قسم السداد والاشتراك عبر كاش وانستاباي ================= -->
+  <!-- ================= قسم السداد والاشتراك عبر كاش وانستاباي ================= -->
   <section id="subscribe" class="max-w-2xl mx-auto px-4 mt-12 mb-8">
     <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl space-y-5">
       <div class="text-center space-y-1 border-b pb-4">
@@ -279,7 +276,7 @@
           <span id="target-phone" class="text-3xl sm:text-4xl font-mono font-black tracking-widest text-emerald-400 select-all">
             01062650131
           </span>
-          <button onclick="copyNumber()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white text-xs rounded-xl border border-slate-700 transition">
+          <button onclick="navigator.clipboard.writeText('01062650131'); alert('تم نسخ الرقم: 01062650131');" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white text-xs rounded-xl border border-slate-700 transition">
             نسخ
           </button>
         </div>
@@ -289,30 +286,21 @@
       <div class="grid grid-cols-2 gap-3 text-xs">
         <button
           type="button"
-          id="plan-monthly"
           onclick="selectPlan('شهري', 180)"
           class="p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-emerald-400 transition text-center space-y-1"
         >
           <span class="text-slate-600 block font-bold text-xs">اشتراك شهري</span>
           <span class="text-lg font-black text-slate-900 font-mono block">180 ج.م</span>
-          <span class="text-[10px] text-slate-400 block">مرونة وتجديد شهري</span>
         </button>
 
         <button
           type="button"
-          id="plan-term"
           onclick="selectPlan('ترم كامل', 810)"
           class="p-4 rounded-2xl border-2 border-emerald-600 bg-emerald-50/70 transition text-center space-y-1 shadow-xs"
         >
           <span class="text-emerald-800 block font-bold text-xs">ترم كامل (الأكثر توفيراً)</span>
           <span class="text-lg font-black text-emerald-950 font-mono block">810 ج.م</span>
-          <span class="text-[10px] text-emerald-700 block font-bold">خصم 25% + مراجعات</span>
         </button>
-      </div>
-
-      <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex justify-between items-center text-xs">
-        <span>الباقة المحددة للسداد:</span>
-        <span id="selected-plan-badge" class="font-bold text-emerald-800 font-mono">باقة الترم الكامل (810 ج.م)</span>
       </div>
 
       <form onsubmit="sendPaymentConfirmation(event)" class="space-y-3 text-xs">
@@ -342,63 +330,50 @@
     let currentSelectedPlan = "ترم كامل";
     let currentSelectedPrice = 810;
 
-    // دالة التبديل بين المراحل والصفوف التعليمية
+    function toggleAdminPanel() {
+      document.getElementById("admin-panel-modal").classList.toggle("hidden");
+    }
+
+    // التبديل بين المراحل
     function switchGradeTab(grade) {
-      ['sec3', 'prep3', 'prim6', 'kg', 'tools'].forEach(g => {
-        document.getElementById('content-' + g).classList.add('hidden');
-        document.getElementById('tab-' + g).className = "px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
+      ['sec3', 'prep3', 'prim6', 'parent'].forEach(g => {
+        if(document.getElementById('content-' + g)) document.getElementById('content-' + g).classList.add('hidden');
+        if(document.getElementById('tab-' + g)) document.getElementById('tab-' + g).className = "px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
       });
       document.getElementById('content-' + grade).classList.remove('hidden');
       document.getElementById('tab-' + grade).className = "px-3.5 py-2 rounded-xl bg-emerald-700 text-white transition";
     }
 
-    // فحص إجابة الثانوية العامة ونواتج التعلم
-    function checkSecAnswer(btn, isCorrect, reason) {
-      const fb = document.getElementById('sec-feedback');
+    // التبديل بين أركان الدرس الخمسة (فيديو، خريطة، سلايدات، ملزمة، كويز)
+    function switchLessonPart(part) {
+      ['video', 'mindmap', 'slides', 'pdf', 'quiz'].forEach(p => {
+        document.getElementById('lpart-' + p).classList.add('hidden');
+        document.getElementById('lpart-btn-' + p).className = "p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
+      });
+      document.getElementById('lpart-' + part).classList.remove('hidden');
+      document.getElementById('lpart-btn-' + part).className = "p-3 rounded-xl bg-emerald-700 text-white transition shadow-xs";
+    }
+
+    function checkPartQuiz(btn, isCorrect, reason) {
+      const fb = document.getElementById('quiz-part-feedback');
       fb.classList.remove('hidden');
       if (isCorrect) {
         btn.classList.add('bg-emerald-100', 'border-emerald-500', 'font-bold');
-        fb.className = "p-4 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-2xl text-xs space-y-1";
+        fb.className = "p-4 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-2xl text-xs";
         fb.innerHTML = "🎉 <strong>إجابة صحيحة وممتازة! (+30 XP)</strong> " + reason;
         confetti({ particleCount: 70, spread: 60, origin: { y: 0.6 } });
       } else {
         btn.classList.add('bg-rose-50', 'border-rose-300');
-        fb.className = "p-4 bg-rose-50 border border-rose-200 text-rose-900 rounded-2xl text-xs space-y-1";
-        fb.innerHTML = "💡 <strong>غير دقيقة!</strong> الإجابة الصحيحة هي: (A) في محل نصب نعت؛ لأن الجمل بعد النكرات صفات.";
+        fb.className = "p-4 bg-rose-50 border border-rose-200 text-rose-900 rounded-2xl text-xs";
+        fb.innerHTML = "💡 <strong>غير دقيقة!</strong> الإجابة الصحيحة هي: (A) مفعول به لاسم الفاعل العامل (رافع).";
       }
     }
 
-    // مشجر الإعراب
-    function parseWord(word, desc) {
-      document.getElementById('parse-title').innerText = "إعراب كلمة: «" + word + "»";
-      document.getElementById('parse-desc').innerText = desc;
-    }
-
-    // اختيار الباقة
     function selectPlan(planType, price) {
       currentSelectedPlan = planType;
       currentSelectedPrice = price;
-      const btnMonthly = document.getElementById("plan-monthly");
-      const btnTerm = document.getElementById("plan-term");
-      const badge = document.getElementById("selected-plan-badge");
-
-      if (planType === "شهري") {
-        btnMonthly.className = "p-4 rounded-2xl border-2 border-emerald-600 bg-emerald-50/70 transition text-center space-y-1 shadow-xs";
-        btnTerm.className = "p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-emerald-400 transition text-center space-y-1";
-        badge.innerText = "الاشتراك الشهري (180 ج.م)";
-      } else {
-        btnTerm.className = "p-4 rounded-2xl border-2 border-emerald-600 bg-emerald-50/70 transition text-center space-y-1 shadow-xs";
-        btnMonthly.className = "p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-emerald-400 transition text-center space-y-1";
-        badge.innerText = "باقة الترم الكامل (810 ج.م)";
-      }
     }
 
-    function copyNumber() {
-      navigator.clipboard.writeText("01062650131");
-      alert("تم نسخ الرقم بنجاح: 01062650131");
-    }
-
-    // إرسال رسالة الواتساب التلقائية
     function sendPaymentConfirmation(e) {
       e.preventDefault();
       const name = document.getElementById("student-name").value;

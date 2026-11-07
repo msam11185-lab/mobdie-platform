@@ -59,7 +59,7 @@
           <span class="font-bold text-emerald-950 block">الحساب المعتمد للسداد الفوري:</span>
           <span class="text-xs text-emerald-800 font-mono font-bold">فودافون كاش & انستاباي: 01062650131</span>
         </div>
-        <span class="text-[11px] bg-emerald-200 text-emerald-950 px-2.5 py-1 rounded-lg font-bold">الحساب نشط ومربوط ✓</span>
+        <span class="text-[11px] bg-emerald-200 text-emerald-950 px-2.5 py-1 rounded-lg font-bold">الحساب نشط ומربوط ✓</span>
       </div>
 
       <div class="space-y-2 text-xs">
@@ -77,248 +77,204 @@
     </div>
   </div>
 
-  <!-- ================= 2. البوابة التعليمية الشاملة ================= -->
+  <!-- ================= 2. البوابة التعليمية الشاملة بالمحتوى الحقيقي ================= -->
   <main class="max-w-5xl mx-auto px-4 mt-6 space-y-6">
     
     <!-- لافتة الترحيب المحدثة -->
     <div class="bg-gradient-to-r from-emerald-950 via-emerald-900 to-slate-950 text-white p-6 rounded-3xl shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
       <div class="space-y-1">
-        <span class="text-[10px] bg-amber-400 text-slate-950 px-2.5 py-0.5 rounded-full font-black">المناهج الرسمية المطورة 2026/2027</span>
-        <h2 class="text-xl md:text-2xl font-black text-slate-100">بوابة المناهج التعليمية المتطورة لجميع الصفوف 🌟</h2>
-        <p class="text-xs text-emerald-200">حقائب تعليمية خماسية: شرح وافٍ + خرائط ذهنية + شرائح عرض + تدريبات تفاعلية</p>
+        <span class="text-[10px] bg-amber-400 text-slate-950 px-2.5 py-0.5 rounded-full font-black">محتوى علمي كامل وحقيقي لدفعة 2026/2027</span>
+        <h2 class="text-xl md:text-2xl font-black text-slate-100">المكتبة والمناهج التعليمية الكاملة لجميع الصفوف 🌟</h2>
+        <p class="text-xs text-emerald-200">نصوص كاملة، شروحات نحوية مفصلة، جداول إعراب، وبنوك أسئلة وزارية</p>
       </div>
 
       <div class="flex items-center gap-2 text-xs">
         <div class="p-3 bg-white/10 rounded-2xl border border-white/15 text-center">
-          <span class="text-[10px] text-amber-300 block font-bold">الدرجة النهائية</span>
-          <span class="text-lg font-mono font-black text-white">الدرجات كاملة 🎯</span>
+          <span class="text-[10px] text-amber-300 block font-bold">المجموع</span>
+          <span class="text-lg font-mono font-black text-white">80 درجة 🎯</span>
         </div>
       </div>
     </div>
 
-    <!-- شريط التبديل بين المراحل والصفوف -->
+    <!-- شريط الصفوف والمراحل المطور -->
     <div class="flex flex-wrap items-center gap-2 p-2.5 bg-white rounded-2xl border border-slate-200 text-xs font-bold shadow-xs">
-      <span class="text-slate-400 mr-2 text-[11px]">الصف الدراسي:</span>
-      <button onclick="switchMainStage('prep3')" id="stage-btn-prep3" class="px-3.5 py-2 rounded-xl bg-emerald-700 text-white transition">📝 الثالث الإعدادي (المحافظات 2027)</button>
-      <button onclick="switchMainStage('prim6')" id="stage-btn-prim6" class="px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">🎒 السادس الابتدائي (Edu 2.0)</button>
-      <button onclick="switchMainStage('sec2')" id="stage-btn-sec2" class="px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">🎓 الثاني الثانوي (البكالوريا 2027)</button>
+      <span class="text-slate-400 mr-2 text-[11px]">اختر الصف الدراسي:</span>
+      <button onclick="switchEduStage('sec2')" id="stage-btn-sec2" class="px-3.5 py-2 rounded-xl bg-emerald-700 text-white transition">🎓 الثاني الثانوي (البكالوريا 2027)</button>
+      <button onclick="switchEduStage('prep3')" id="stage-btn-prep3" class="px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">📝 الثالث الإعدادي (المحافظات)</button>
+      <button onclick="switchEduStage('prim6')" id="stage-btn-prim6" class="px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">🎒 السادس الابتدائي (المنهج المطور)</button>
     </div>
 
     <!-- ========================================================================= -->
-    <!-- 📝 محتوى الشهادة الإعدادية (الصف الثالث الإعدادي 2026/2027) الحقيبة الخماسية 📝 -->
+    <!-- 🎓 1. المحتوى الكامل للصف الثاني الثانوي (البكالوريا 2026/2027) 🎓 -->
     <!-- ========================================================================= -->
-    <div id="content-stage-prep3" class="space-y-6">
+    <div id="content-stage-sec2" class="space-y-6">
       
-      <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
-        
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b pb-4">
-          <div>
-            <span class="text-[10px] font-bold text-blue-800 bg-blue-50 px-2.5 py-1 rounded-md">منهج الصف الثالث الإعدادي (الفصل الدراسي الأول 2026/2027)</span>
-            <h3 class="text-lg font-black text-slate-900 mt-1">الحقيبة النحوية المتكاملة: المنادى، البدل، المدح والذم، والممنوع من الصرف</h3>
-          </div>
-          <span class="text-xs bg-slate-900 text-amber-300 font-bold px-3 py-1.5 rounded-xl">نحو المحافظات الإجباري</span>
+      <!-- أزرار تبديل أركان الدرس لـ 2 ثانوي بكالوريا -->
+      <div class="flex flex-wrap gap-2 text-xs font-bold">
+        <button onclick="switchSec2Tab('text')" id="sec2-tab-btn-text" class="px-4 py-2.5 rounded-xl bg-emerald-800 text-white transition shadow-xs">
+          📖 النص الوزاري وتفكيكه كاملاً
+        </button>
+        <button onclick="switchSec2Tab('grammar')" id="sec2-tab-btn-grammar" class="px-4 py-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+          ⚖️ القواعد النحوية وجداول الإعراب
+        </button>
+        <button onclick="switchSec2Tab('quiz')" id="sec2-tab-btn-quiz" class="px-4 py-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+          🎯 امتحان بابل شيت تفاعلي (5 أسئلة)
+        </button>
+      </div>
+
+      <!-- 1. أ. نص القراءة المحوري وتفكيكه كاملاً: المرأة وبناء الدولة الحديثة -->
+      <div id="sec2-tab-text" class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 text-xs leading-relaxed">
+        <div class="flex justify-between items-center border-b pb-3">
+          <span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md">الوحدة الرابعة: بناء الوعي</span>
+          <span class="text-xs bg-slate-900 text-amber-300 font-bold px-3 py-1 rounded-xl">نص محوري إجباري</span>
         </div>
 
-        <!-- أزرار تبديل أركان حقيبة الإعدادية -->
-        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs font-bold text-center">
-          <button onclick="switchPrep3Tab('textbook')" id="p3-btn-textbook" class="p-3 rounded-xl bg-emerald-700 text-white transition shadow-xs">
-            📖 الشرح الوافي للنحو
-          </button>
-          <button onclick="switchPrep3Tab('mindmap')" id="p3-btn-mindmap" class="p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-            🧠 الخريطة الذهنية
-          </button>
-          <button onclick="switchPrep3Tab('slides')" id="p3-btn-slides" class="p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-            📊 شرائح التريكات
-          </button>
-          <button onclick="switchPrep3Tab('writing')" id="p3-btn-writing" class="p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-            ✍️ التعبير الوظيفي
-          </button>
-          <button onclick="switchPrep3Tab('quiz')" id="p3-btn-quiz" class="p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-            🏛️ امتحانات المحافظات
-          </button>
+        <h3 class="text-base font-black text-slate-900">نص الدرس الوزاري كاملاً: «المرأة وبناء الدولة الحديثة»</h3>
+
+        <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl space-y-3 font-serif text-slate-800 text-sm leading-loose">
+          <p>
+            «إِنَّ الحَدِيثَ عَنْ بِنَاءِ الدَّوْلَةِ الحَدِيثَةِ لَا يَنْبَغِي أَنْ يَقِفَ عِنْدَ حُدُودِ المَشْرُوعَاتِ القَوْمِيَّةِ وَتَشْيِيدِ المَبَانِي وَالمَرَافِقِ فَحَسْبُ؛ فَهَذَا اتِّجَاهٌ يَرَى النَّهْضَةَ فِي مَظَاهِرِهَا المَادِّيَّةِ العُمْرَانِيَّةِ فَقَطْ. غَيْرَ أَنَّ اتِّجَاهاً آخَرَ أَكْثَرَ عُمْقاً يُؤَكِّدُ أَنَّ بِنَاءَ الإِنْسَانِ وَتَمْكِينَ المَرْأَةِ هُمَا الرَّكِيزَةُ الأُولَى وَالشَّرْطُ الجَوْهَرِيُّ لِنَجَاحِ التَّنْمِيَةِ؛ فَالإِنْسَانُ الصَّالِحُ هُوَ الَّذِي يَصُونُ المَشْرُوعَاتِ وَيَحْمِيهَا مِنَ الفَسَادِ وَالإِهْدَارِ.»
+          </p>
+          <p>
+            «وَلَقَدْ أَثْبَتَتِ التَّجَارِبُ أَنَّ أَيَّ مُجْتَمَعٍ يُهَمِّشُ طَاقَاتِ المَرْأَةِ، إِنَّمَا يُعَطِّلُ نِصْفَ قُوَاهُ المُعَطِّلَةِ عَنِ الإِنْتَاجِ؛ فَهِيَ شَرِيكٌ أَصِيلٌ فِي صِيَاغَةِ الهُوِيَّةِ وَتَرْبِيَةِ الأَجْيَالِ وَقِيَادَةِ مَيَادِينِ العِلْمِ وَالعَمَلِ.»
+          </p>
         </div>
 
-        <!-- 1. الشرح النحوي الوافي لقواعد الشهادة الإعدادية -->
-        <div id="p3-tab-textbook" class="space-y-4 text-xs leading-relaxed text-slate-800">
+        <!-- التفكيك والتحليل اللغوي والنقدي -->
+        <div class="space-y-3 pt-2">
+          <h4 class="font-bold text-slate-900 text-sm border-b pb-1">التفكيك البلاغي والعلاقات الضمنية للامتحان الوزاري:</h4>
           
-          <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl space-y-3">
-            <h4 class="font-bold text-blue-950 text-sm border-b pb-2">الباب الأول: المنادى وأحكامه الخمسة بالتفصيل:</h4>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <div class="p-3.5 bg-white rounded-xl border border-slate-200 space-y-1.5">
-                <span class="font-bold text-emerald-800 block text-xs">أولاً: المنادى المعرب (حكمه واجب النصب):</span>
-                <p>1. <strong>المضاف:</strong> يليه مضاف إليه ولا يُنوَّن: «يَا <strong>طَالِبَ</strong> العِلْمِ»، «يَا <strong>مُعَلِّمِي</strong> الخَيْرِ» (منصوب بالياء وحذفت النون للإضافة).</p>
-                <p>2. <strong>الشبيه بالمضاف:</strong> يتصل به شيء يتمم معناه (غالباً جار ومجرور) وتثبت فيه النون والتنوين: «يَا <strong>طَالِباً</strong> لِلعِلْمِ»، «يَا <strong>بَاحِثِينَ</strong> عَنِ الحَقِّ».</p>
-                <p>3. <strong>النكرة غير المقصودة:</strong> كلمة واحدة منونة بالفتح لا يقصد بها شخص محدد: «يَا <strong>غَافِلاً</strong>، تَنَبَّهْ»، «يَا <strong>مُسَافِرِينَ</strong>، فِي التَّأَنِّي السَّلَامَةُ».</p>
-              </div>
-
-              <div class="p-3.5 bg-white rounded-xl border border-slate-200 space-y-1.5">
-                <span class="font-bold text-blue-800 block text-xs">ثانياً: المنادى المبني (يُبنى على ما يُرفع به في محل نصب):</span>
-                <p>1. <strong>العلم المفرد:</strong> اسم شخص أو مكان مفرد (ليس مضافاً): «يَا <strong>مُحَمَّدُ</strong>» (مبني على الضم)، «يَا <strong>مِصْرُ</strong>»، «يَا <strong>مُحَمَّدَانِ</strong>» (مبني على الألف)، «يَا <strong>مُحَمَّدُونَ</strong>» (مبني على الواو).</p>
-                <p>2. <strong>النكرة المقصودة:</strong> كلمة واحدة مرفوعة اللفظ يُقصد بها شخص محدد: «يَا <strong>رَجُلُ</strong>، اتَّقِ اللهَ» (مبني على الضم في محل نصب).</p>
-                <p>3. <strong>نداء ما فيه أل:</strong> يُتوصل إليه بـ (أيُّها للمذكر، أيَّتُها للمؤنث)، والمنادى هو (أيُّ / أيَّةُ) مبني على الضم، وما بعدها يعرب نعتاً مرفوعاً.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-5 bg-emerald-50/60 border border-emerald-200 rounded-2xl space-y-3">
-            <h4 class="font-bold text-emerald-950 text-sm border-b pb-2">الباب الثاني: البدل وأنواعه الثلاثة:</h4>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-              <div class="p-3 bg-white rounded-xl border border-emerald-100">
-                <strong class="text-emerald-900 block mb-1">1. البدل المطابق (كل من كل):</strong>
-                • اللقب + العلم: «قَالَ <strong>الفَارُوقُ عُمَرُ</strong>».<br>
-                • اسم إشارة + معرف بأل وهو المشار إليه: «هَذَا <strong>الطَّالِبُ</strong> ذَكِيٌّ».
-              </div>
-              <div class="p-3 bg-white rounded-xl border border-emerald-100">
-                <strong class="text-blue-900 block mb-1">2. بدل بعض من كل:</strong>
-                • جزء مادي حقيقي به ضمير: «قَرَأْتُ الكِتَابَ <strong>نِصْفَهُ</strong>».<br>
-                • سرد أجزاء الشيء: «اتَّقُوا اللهَ فِي الضَّعِيفَيْنِ: <strong>المَرْأَةِ</strong> وَاليَتِيمِ».
-              </div>
-              <div class="p-3 bg-white rounded-xl border border-emerald-100">
-                <strong class="text-amber-900 block mb-1">3. بدل اشتمال:</strong>
-                • جزء معنوي مما يشتمل عليه المبدل منه وبه ضمير: «أَعْجَبَنِي الطَّالِبُ <strong>خُلُقُهُ</strong>»، «سَمِعْتُ الشَّاعِرَ <strong>إِنْشَادَهُ</strong>».
-              </div>
-            </div>
-          </div>
-
-          <div class="p-4 bg-amber-50 border border-amber-300 rounded-2xl text-amber-950 font-semibold text-xs leading-relaxed">
-            💡 <strong>شفرة الأستاذ محمد السنوسي لحسم فخاخ امتحانات المحافظات:</strong><br>
-            • «يَا طَالِباً العِلْمَ اجْتَهِدْ» ⇦ شبيه بالمضاف لوجود التنوين.<br>
-            • «يَا طَالِبَ العِلْمِ اجْتَهِدْ» ⇦ مضاف لحذف التنوين.<br>
-            • «أَعْجَبَنِي فِي الطَّالِبِ خُلُقُهُ» ⇦ (خُلُقُهُ) فاعل مؤخر مرفوع وليست بدلاً؛ لأن ما قبلها مجرور بحرف الجر (في الطالب) وهي التي قامت بالإعجاب!
-          </div>
-        </div>
-
-        <!-- 2. الخريطة الذهنية المشجرة للشهادة الإعدادية -->
-        <div id="p3-tab-mindmap" class="hidden p-6 bg-gradient-to-br from-blue-50 via-indigo-50 to-white rounded-2xl border-2 border-blue-200 space-y-4 text-xs">
-          <div class="text-center space-y-1">
-            <h4 class="font-black text-blue-950 text-base">المشجر البصري لتقسيم المنادى وأحكامه 🧠</h4>
-            <p class="text-slate-500">خارطة ذهنية تفرق بين المعرب المنصوب والمبني في ثانية</p>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="p-4 bg-white rounded-xl border border-blue-200 shadow-xs space-y-2">
-              <span class="font-bold text-emerald-800 block text-xs border-b pb-1">القسم الأول: المنادى المعرب (منصوب دائماً)</span>
-              <ul class="space-y-1.5 text-slate-700">
-                <li>• <strong>المضاف:</strong> كلمتان والأولى غير منونة («يا حارسَ المصنعِ»).</li>
-                <li>• <strong>الشبيه بالمضاف:</strong> كلمتان والأولى منونة أو بها نون («يا حارساً للمصنعِ»).</li>
-                <li>• <strong>النكرة غير المقصودة:</strong> كلمة واحدة منصوبة منونة («يا حارساً، انتبهْ»).</li>
-              </ul>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="p-3.5 bg-emerald-50 rounded-xl border border-emerald-100 space-y-1">
+              <strong class="text-emerald-950 block">1. الاتجاهان الفكريان المتعارضان:</strong>
+              <p class="text-slate-700">• <strong>الاتجاه المادي:</strong> يقيس الدولة بحجم العمران والمشروعات فقط.</p>
+              <p class="text-slate-700">• <strong>اتجاه بناء الوعي (الكاتب):</strong> يرى أن الإنسان وتمكين المرأة هما الأساس لحماية المنجزات.</p>
             </div>
 
-            <div class="p-4 bg-white rounded-xl border border-blue-200 shadow-xs space-y-2">
-              <span class="font-bold text-blue-800 block text-xs border-b pb-1">القسم الثاني: المنادى المبني (مبني في محل نصب)</span>
-              <ul class="space-y-1.5 text-slate-700">
-                <li>• <strong>العلم المفرد:</strong> اسم شخص أو مكان مفرد («يا محمدُ»، «يا مصرُ»).</li>
-                <li>• <strong>النكرة المقصودة:</strong> كلمة واحدة مرفوعة اللفظ محددة («يا حارسُ، انتبهْ»).</li>
-                <li>• <strong>نداء المعرف بأل:</strong> («يا أيُّها الحارسُ»).</li>
-              </ul>
+            <div class="p-3.5 bg-blue-50 rounded-xl border border-blue-100 space-y-1">
+              <strong class="text-blue-950 block">2. شبكة العلاقات المنطقية بين الجمل:</strong>
+              <p class="text-slate-700">• «فَالإِنْسَانُ الصَّالِحُ هُوَ الَّذِي يَصُونُ»: علاقتها بما قبلها <strong>تعليل</strong>.</p>
+              <p class="text-slate-700">• «غَيْرَ أَنَّ اتِّجَاهاً آخَرَ»: تفيد <strong>الاستدراك والتقابل الفكري</strong> لمنع الفهم الخاطئ.</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- 3. شرائح العرض السريعة (Slides) لـ 3 إعدادي -->
-        <div id="p3-tab-slides" class="hidden space-y-4">
-          <div class="p-8 bg-slate-900 text-white rounded-3xl text-center space-y-4 border border-slate-800 shadow-xl min-h-[220px] flex flex-col justify-between">
-            <div class="flex justify-between items-center text-xs text-amber-300">
-              <span id="p3-slide-badge" class="font-mono bg-slate-800 px-3 py-1 rounded-full border border-slate-700">شريحة 1 من 3</span>
-              <span class="font-bold">سلايدات الشهادة الإعدادية 2026/2027</span>
-            </div>
+      <!-- 1. ب. القواعد النحوية الكاملة لـ 2 ثانوي بكالوريا -->
+      <div id="sec2-tab-grammar" class="hidden bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 text-xs leading-relaxed">
+        <h4 class="font-bold text-slate-900 text-sm border-b pb-2">القواعد النحوية المقررة (الأسماء الخمسة والممنوع من الصرف):</h4>
 
-            <div id="p3-slide-content" class="space-y-2 py-4">
-              <h4 class="text-xl font-bold font-serif text-amber-200">الشريحة الأولى: فاعل نِعْمَ وبِئْسَ</h4>
-              <p class="text-sm font-serif leading-relaxed text-slate-200 max-w-xl mx-auto">
-                فاعل (نعم وبئس) له 4 صور: 1. معرف بأل (نعم العملُ). 2. مضاف لمعرف بأل (نعم عملُ المرءِ). 3. ما/من الموصولتان (نعم ما تفعل). 4. ضمير مستتر يفسره تمييز نكرة (نعم عملاً الأمانة ⇦ عملاً: تمييز منصوب).
-              </p>
-            </div>
-
-            <div class="flex justify-between items-center pt-2 border-t border-slate-800 text-xs">
-              <button onclick="prevP3Slide()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl font-bold transition">⇦ السابقة</button>
-              <button onclick="nextP3Slide()" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition">التالية ⇨</button>
-            </div>
+        <!-- جدول الأسماء الخمسة -->
+        <div class="p-4 bg-slate-50 rounded-2xl border space-y-2">
+          <span class="font-bold text-emerald-800 text-sm block">1. الأسماء الخمسة (أب، أخ، حم، فو، ذو):</span>
+          <p>تُرفع بالواو، تُنصب بالألف، وتُجر بالياء بشروط: أن تكون مفردة، ومضافة لغير ياء المتكلم.</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-right bg-white rounded-xl border">
+              <thead class="bg-slate-100 text-slate-700 border-b">
+                <tr><th class="p-2">الحالة</th><th class="p-2">العلامة</th><th class="p-2">المثال المشكول</th><th class="p-2">الإعراب والتعليل</th></tr>
+              </thead>
+              <tbody class="divide-y text-slate-700">
+                <tr><td class="p-2 font-bold text-emerald-800">الرفع</td><td class="p-2">الواو</td><td class="p-2 font-serif font-bold">حَضَرَ أَبُوكَ الفَاضِلُ</td><td class="p-2">فاعل مرفوع بالواو لأنه من الأسماء الخمسة</td></tr>
+                <tr><td class="p-2 font-bold text-blue-800">النصب</td><td class="p-2">الألف</td><td class="p-2 font-serif font-bold">رَأَيْتُ أَبَاكَ الكَرِيمَ</td><td class="p-2">مفعول به منصوب بالألف لأنه من الأسماء الخمسة</td></tr>
+                <tr><td class="p-2 font-bold text-amber-800">الجر</td><td class="p-2">الياء</td><td class="p-2 font-serif font-bold">سَلَّمْتُ عَلَى أَبِيكَ</td><td class="p-2">اسم مجرور بالياء لأنه من الأسماء الخمسة</td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <!-- 4. معمل التعبير الوظيفي المعتمد لـ 3 إعدادي -->
-        <div id="p3-tab-writing" class="hidden space-y-4 text-xs leading-relaxed">
-          <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl space-y-3">
-            <span class="text-xs bg-emerald-100 text-emerald-900 px-3 py-1 rounded-full font-bold">قوالب التعبير الوظيفي الإجباري للامتحان</span>
-            <h4 class="font-black text-slate-900 text-sm">نماذج كتابة البرقية واللافته والإعلان بدرجة التقفيل:</h4>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div class="p-4 bg-white rounded-xl border border-slate-200 space-y-1 font-serif">
-                <span class="font-bold text-emerald-800 block text-xs font-sans">1. قالب البرقية الرسمي:</span>
-                <p class="text-slate-500 text-[11px]">اسم المرسل إليه: .....................<br>عنوانه: .....................</p>
-                <p class="text-slate-900 font-bold py-1">«مبارك النجاح الباهر والتفوق المشرف، ومزيداً من التقدم.»</p>
-                <p class="text-slate-500 text-[11px]">اسم الراسل: .....................<br>عنوانه: .....................</p>
-              </div>
-
-              <div class="p-4 bg-white rounded-xl border border-slate-200 space-y-1 font-serif">
-                <span class="font-bold text-blue-800 block text-xs font-sans">2. قالب اللافته الإرشادية:</span>
-                <p class="text-slate-500 text-[11px]">يجب وضعها داخل مستطيل بإيجاز دون إطناب:</p>
-                <div class="p-3 bg-slate-50 border border-dashed border-slate-300 text-center font-bold text-slate-900 mt-2">
-                  « النَّظَافَةُ سُلُوكٌ حَضَارِيٌّ، فَلْنُحَافِظْ عَلَى مَدْرَسَتِنَا »
-                </div>
-              </div>
+        <!-- جدول الممنوع من الصرف والجر بالفتحة والكسرة -->
+        <div class="p-4 bg-slate-50 rounded-2xl border space-y-2">
+          <span class="font-bold text-blue-800 text-sm block">2. فخاخ إعراب الممنوع من الصرف للامتحان:</span>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="p-3 bg-white rounded-xl border space-y-1">
+              <strong class="text-emerald-900 block">يُجر بالفتحة (نيابة عن الكسرة):</strong>
+              <p>بشرط ألا يقترن بأل ولا يليه مضاف إليه: «صَلَّيْتُ فِي <strong>مَسَاجِدَ</strong> كَثِيرَةٍ» ⇦ مساجدَ: اسم مجرور وعلامة جره الفتحة لأنه ممنوع من الصرف (صيغة منتهى الجموع).</p>
+            </div>
+            <div class="p-3 bg-white rounded-xl border space-y-1">
+              <strong class="text-rose-900 block">يُجر بالكسرة الأصلية:</strong>
+              <p>إذا اقترن بأل أو أضيف: «صَلَّيْتُ فِي <strong>المَسَاجِدِ</strong>» أو «فِي <strong>مَسَاجِدِ</strong> القَاهِرَةِ» ⇦ مجرور وعلامة جره الكسرة الظاهرة.</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- 5. بنك امتحانات المحافظات التفاعلي الفعلي (تصحيح وXP) -->
-        <div id="p3-tab-quiz" class="hidden space-y-4">
-          <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 space-y-4">
-            <div class="flex justify-between items-center border-b pb-3 text-xs">
-              <span id="p3-quiz-progress" class="font-bold text-slate-800">السؤال 1 من 3 (امتحان محافظة القاهرة):</span>
-              <span id="p3-quiz-score" class="font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded-full">الدرجة: 0 XP</span>
-            </div>
-
-            <div class="p-4 bg-white border border-slate-200 rounded-xl font-serif text-sm sm:text-base font-bold text-slate-900 text-center leading-relaxed" id="p3-question-box">
-              « يَا <span class="text-blue-700 underline">مُصْرِيُّونَ</span>، اتَّحِدُوا لِبِنَاءِ الوَطَنِ » .. ما إعراب كلمة (مُصْرِيُّونَ)؟
-            </div>
-
-            <div class="space-y-2 text-xs" id="p3-choices-box">
-              <button onclick="checkP3Quiz(this, true, 'منادى نكرة مقصودة مبني على الواو في محل نصب؛ لأنه كلمة واحدة وجاءت مرفوعة اللفظ.')" class="w-full p-3.5 rounded-xl border border-slate-200 hover:border-blue-500 bg-white transition text-right flex justify-between">
-                <span>منادى نكرة مقصودة مبني على الواو في محل نصب</span>
-                <span class="text-slate-400 font-mono">(A)</span>
-              </button>
-              <button onclick="checkP3Quiz(this, false, '')" class="w-full p-3.5 rounded-xl border border-slate-200 hover:border-blue-500 bg-white transition text-right flex justify-between">
-                <span>منادى نكرة غير مقصودة منصوب بالواو</span>
-                <span class="text-slate-400 font-mono">(B)</span>
-              </button>
-              <button onclick="checkP3Quiz(this, false, '')" class="w-full p-3.5 rounded-xl border border-slate-200 hover:border-blue-500 bg-white transition text-right flex justify-between">
-                <span>منادى مضاف منصوب بالفتحة</span>
-                <span class="text-slate-400 font-mono">(C)</span>
-              </button>
-            </div>
-
-            <div id="p3-feedback-box" class="hidden p-4 rounded-xl text-xs space-y-1"></div>
-          </div>
+      <!-- 1. ج. امتحان بابل شيت متكامل (5 أسئلة متتابعة لـ 2 ثانوي بكالوريا) -->
+      <div id="sec2-tab-quiz" class="hidden bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 text-xs">
+        <div class="flex justify-between items-center border-b pb-3">
+          <span id="b2-quiz-counter" class="font-bold text-slate-800">السؤال 1 من 5 (نظام البابل شيت 2026/2027):</span>
+          <span id="b2-score-badge" class="font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">الدرجة: 0 XP</span>
         </div>
 
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl font-serif text-sm sm:text-base font-bold text-slate-900 text-center leading-relaxed" id="b2-question-text">
+          سؤال 1: « إِنَّ لِـ <span class="text-emerald-700 underline">أَبِيكَ</span> عَلَيْكَ فَضْلاً كَبِيراً » .. ما إعراب كلمة (أَبِيكَ)؟
+        </div>
+
+        <div class="space-y-2" id="b2-choices-container">
+          <!-- الخيارات تتولد بالجافاسكريبت -->
+        </div>
+
+        <div id="b2-feedback-box" class="hidden p-4 rounded-xl text-xs space-y-1"></div>
+
+        <div class="flex justify-end pt-2">
+          <button id="b2-next-btn" onclick="nextB2Question()" class="hidden px-5 py-2.5 bg-slate-900 text-white rounded-xl font-bold transition">
+            السؤال التالي ⇦
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- 📝 2. المحتوى الكامل للشهادة الإعدادية (الصف الثالث الإعدادي) 📝 -->
+    <!-- ========================================================================= -->
+    <div id="content-stage-prep3" class="hidden space-y-6">
+      <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 text-xs leading-relaxed">
+        <div class="flex justify-between items-center border-b pb-3">
+          <span class="text-xs bg-blue-50 text-blue-800 font-bold px-3 py-1 rounded-full">الشهادة الإعدادية (نحو المحافظات الإجباري)</span>
+          <span class="text-slate-400 font-bold">مراجعة كاملة</span>
+        </div>
+
+        <h3 class="text-base font-black text-slate-900">جدول المنادى الكامل بأحكامه الخمسة:</h3>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-right bg-slate-50 rounded-xl border border-slate-200">
+            <thead class="bg-slate-100 text-slate-700 border-b">
+              <tr><th class="p-2.5">النوع</th><th class="p-2.5">الحكم الإعرابي</th><th class="p-2.5">المثال المشكول</th><th class="p-2.5">العلامة والتوضيح</th></tr>
+            </thead>
+            <tbody class="divide-y text-slate-700 font-serif">
+              <tr><td class="p-2.5 font-bold text-emerald-800">1. مضاف</td><td class="p-2.5">معرب (واجب النصب)</td><td class="p-2.5">يَا <strong>طَالِبَ</strong> العِلْمِ اجْتَهِدْ</td><td class="p-2.5">منصوب بالفتحة، ولا ينون وحذفت نونه للإضافة</td></tr>
+              <tr><td class="p-2.5 font-bold text-emerald-800">2. شبيه بالمضاف</td><td class="p-2.5">معرب (واجب النصب)</td><td class="p-2.5">يَا <strong>طَالِباً</strong> لِلعِلْمِ اجْتَهِدْ</td><td class="p-2.5">منصوب بالفتحة، وثبت فيه التنوين وجاء بعده جار ومجرور</td></tr>
+              <tr><td class="p-2.5 font-bold text-emerald-800">3. نكرة غير مقصودة</td><td class="p-2.5">معرب (واجب النصب)</td><td class="p-2.5">يَا <strong>غَافِلاً</strong>، تَنَبَّهْ</td><td class="p-2.5">منصوب بالفتحة، كلمة واحدة منونة لا يقصد بها شخص محدد</td></tr>
+              <tr><td class="p-2.5 font-bold text-blue-800">4. علم مفرد</td><td class="p-2.5">مبني في محل نصب</td><td class="p-2.5">يَا <strong>مُحَمَّدُ</strong> / يَا <strong>مِصْرُ</strong></td><td class="p-2.5">مبني على الضم في محل نصب لأنه علم مفرد</td></tr>
+              <tr><td class="p-2.5 font-bold text-blue-800">5. نكرة مقصودة</td><td class="p-2.5">مبني في محل نصب</td><td class="p-2.5">يَا <strong>طَالِبُ</strong>، اجْتَهِدْ</td><td class="p-2.5">مبني على الضم في محل نصب لأنه قصد به شخص معين</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
-    <!-- ================= محتوى الصف السادس الابتدائي المطور 2026/2027 ================= -->
+    <!-- ========================================================================= -->
+    <!-- 🎒 3. المحتوى الكامل للصف السادس الابتدائي (Edu 2.0 المطور) 🎒 -->
+    <!-- ========================================================================= -->
     <div id="content-stage-prim6" class="hidden space-y-6">
-      <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4 shadow-sm text-xs leading-relaxed">
+      <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 text-xs leading-relaxed">
         <div class="flex justify-between items-center border-b pb-3">
           <span class="text-xs bg-amber-50 text-amber-800 font-bold px-3 py-1 rounded-full">السادس الابتدائي المطور (Edu 2.0)</span>
-          <span class="text-slate-400">الحقيبة التعليمية الشاملة</span>
+          <span class="text-slate-400 font-bold">حقيبة النحو والتعبير</span>
         </div>
-        <h3 class="text-base font-black text-slate-900">أنواع الخبر، الضمائر البارزة والمستترة، ومعمل كتابة الرسالة والمطوية</h3>
-        <p class="text-slate-600">شرح وافٍ وتطبيقات تفاعلية مع كويزات الـ XP بنظام المناهج المطورة للأستاذ محمد السنوسي.</p>
-      </div>
-    </div>
 
-    <!-- ================= محتوى الصف الثاني الثانوي (البكالوريا) ================= -->
-    <div id="content-stage-sec2" class="hidden space-y-6">
-      <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4 shadow-sm text-xs leading-relaxed">
-        <div class="flex justify-between items-center border-b pb-3">
-          <span class="text-xs bg-emerald-50 text-emerald-800 font-bold px-3 py-1 rounded-full">الثاني الثانوي (البكالوريا المصرية 2027)</span>
-          <span class="text-slate-400">الوحدات الست الكاملة</span>
+        <h3 class="text-base font-black text-slate-900">شرح أنواع الخبر الأربعة بالتفصيل:</h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="p-3 bg-slate-50 rounded-xl border space-y-1">
+            <span class="font-bold text-emerald-800 block text-xs">1. الخبر المفرد:</span>
+            <p>اسم وكلمة واحدة: «المعلمُ <strong>مخلصٌ</strong>»، «المعلمون <strong>مخلصونَ</strong>» (خبر مرفوع بالواو لأنه جمع مذكر سالم).</p>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border space-y-1">
+            <span class="font-bold text-blue-800 block text-xs">2. خبر الجملة الاسمية:</span>
+            <p>اسم به ضمير رابط يعود على المبتدأ: «الشجرةُ <strong>أغصانُها مورقةٌ</strong>» (أغصانها مبتدأ ثانٍ، ومورقة خبر المبتدأ الثاني).</p>
+          </div>
         </div>
-        <h3 class="text-base font-black text-slate-900">الوحدة الأولى والثانية ونصوص بناء الوعي والمرأة والدولة الحديثة</h3>
-        <p class="text-slate-600">شرح الأسماء الخمسة، الممنوع من الصرف، وأساليب القصر والتوكيد مع امتحان شهر نوفمبر التفاعلي.</p>
       </div>
     </div>
 
@@ -328,7 +284,7 @@
   <section id="subscribe" class="max-w-2xl mx-auto px-4 mt-12 mb-8">
     <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl space-y-5">
       <div class="text-center space-y-1 border-b pb-4">
-        <span class="text-xs bg-amber-100 text-amber-900 px-3 py-1 rounded-full font-bold">باقات المناهج والتقييمات الأسبوعية 2026/2027</span>
+        <span class="text-xs bg-amber-100 text-amber-900 px-3 py-1 rounded-full font-bold">باقات المناهج المطورة 2026/2027</span>
         <h3 class="text-xl font-black text-slate-900 mt-2">الاشتراك وتفعيل الحساب فورياً</h3>
         <p class="text-xs text-slate-500">اختر باقتك وسدد عبر فودافون كاش أو انستاباي وسنُفعّل حسابك فوراً</p>
       </div>
@@ -390,19 +346,18 @@
     <p class="font-bold text-emerald-800">رؤية وإشراف وإدارة: الأستاذ محمد السنوسي (01062650131)</p>
   </footer>
 
-  <!-- ================= 5. جافاسكريبت التحكم التفاعلي ================= -->
+  <!-- ================= 5. جافاسكريبت التحكم التفاعلي الكامل ================= -->
   <script>
     let currentSelectedPlan = "ترم كامل";
     let currentSelectedPrice = 810;
-    let p3Score = 0;
 
     function toggleAdminPanel() {
       document.getElementById("admin-panel-modal").classList.toggle("hidden");
     }
 
     // التبديل بين المراحل الرئيسية
-    function switchMainStage(stage) {
-      ['prep3', 'prim6', 'sec2'].forEach(s => {
+    function switchEduStage(stage) {
+      ['sec2', 'prep3', 'prim6'].forEach(s => {
         document.getElementById('content-stage-' + s).classList.add('hidden');
         document.getElementById('stage-btn-' + s).className = "px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
       });
@@ -410,93 +365,23 @@
       document.getElementById('stage-btn-' + stage).className = "px-3.5 py-2 rounded-xl bg-emerald-700 text-white transition";
     }
 
-    // التبديل بين أركان حقيبة 3 إعدادي (شرح، خريطة، سلايدات، تعبير، كويز)
-    function switchPrep3Tab(part) {
-      ['textbook', 'mindmap', 'slides', 'writing', 'quiz'].forEach(p => {
-        document.getElementById('p3-tab-' + p).classList.add('hidden');
-        document.getElementById('p3-btn-' + p).className = "p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
+    // التبديل بين أركان 2 ثانوي بكالوريا (النص، النحو، الامتحان)
+    function switchSec2Tab(tab) {
+      ['text', 'grammar', 'quiz'].forEach(t => {
+        document.getElementById('sec2-tab-' + t).classList.add('hidden');
+        document.getElementById('sec2-tab-btn-' + t).className = "px-4 py-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
       });
-      document.getElementById('p3-tab-' + part).classList.remove('hidden');
-      document.getElementById('p3-btn-' + part).className = "p-3 rounded-xl bg-emerald-700 text-white transition shadow-xs";
+      document.getElementById('sec2-tab-' + tab).classList.remove('hidden');
+      document.getElementById('sec2-tab-btn-' + tab).className = "px-4 py-2.5 rounded-xl bg-emerald-800 text-white transition shadow-xs";
     }
 
-    // سلايدات الشهادة الإعدادية
-    const p3Slides = [
+    // بنك أسئلة 2 ثانوي بكالوريا (5 أسئلة متتابعة)
+    const b2Questions = [
       {
-        num: "شريحة 1 من 3: فاعل نِعْمَ وبِئْسَ",
-        title: "الصور الأربع لفاعل نِعْمَ وبِئْسَ",
-        body: "1. معرف بأل (نعم العملُ). 2. مضاف لمعرف بأل (نعم عملُ المرءِ). 3. ما/من الموصولتان (نعم ما تفعل). 4. ضمير مستتر يفسره تمييز نكرة (نعم عملاً الصدق ⇦ عملاً: تمييز منصوب)."
-      },
-      {
-        num: "شريحة 2 من 3: المخصوص بالمدح والذم",
-        title: "إعراب المخصوص مع نِعْمَ وحبّذا",
-        body: "مع (نعم وبئس) يعرب: مبتدأ مؤخر جوازاً مرفوع بالضمة، أو خبر لمبتدأ محذوف وجوباً. ومع (حبّذا ولا حبّذا) يعرب: مبتدأ مؤخر وجوباً مرفوعاً."
-      },
-      {
-        num: "شريحة 3 من 3: الممنوع من الصرف لعلة واحدة",
-        title: "العلل الثلاث المانعة للصرف",
-        body: "1. صيغة منتهى الجموع (مساجد، مفاتيح). 2. اسم مختوم بألف التأنيث المقصورة (كبرى، فضلى). 3. اسم مختوم بألف التأنيث الممدودة (صحراء، علماء)."
-      }
-    ];
-
-    let p3SlideIdx = 0;
-    function updateP3Slide() {
-      const s = p3Slides[p3SlideIdx];
-      document.getElementById('p3-slide-badge').innerText = s.num;
-      document.getElementById('p3-slide-content').innerHTML = `
-        <h4 class="text-xl font-bold font-serif text-amber-200">${s.title}</h4>
-        <p class="text-sm font-serif leading-relaxed text-slate-200 max-w-xl mx-auto">${s.body}</p>
-      `;
-    }
-
-    function nextP3Slide() {
-      p3SlideIdx = (p3SlideIdx + 1) % p3Slides.length;
-      updateP3Slide();
-    }
-
-    function prevP3Slide() {
-      p3SlideIdx = (p3SlideIdx - 1 + p3Slides.length) % p3Slides.length;
-      updateP3Slide();
-    }
-
-    // فحص كويز امتحانات المحافظات للإعدادية
-    function checkP3Quiz(btn, isCorrect, reason) {
-      const fb = document.getElementById('p3-feedback-box');
-      fb.classList.remove('hidden');
-      if (isCorrect) {
-        p3Score += 25;
-        document.getElementById('p3-quiz-score').innerText = `الدرجة: ${p3Score} XP`;
-        btn.classList.add('bg-blue-100', 'border-blue-500', 'font-bold');
-        fb.className = "p-4 bg-blue-50 border border-blue-200 text-blue-900 rounded-xl text-xs space-y-1";
-        fb.innerHTML = `🎉 <strong>إجابة صحيحة وممتازة! (+25 XP)</strong> ${reason}`;
-        confetti({ particleCount: 60, spread: 50, origin: { y: 0.6 } });
-      } else {
-        btn.classList.add('bg-rose-50', 'border-rose-300');
-        fb.className = "p-4 bg-rose-50 border border-rose-200 text-rose-900 rounded-xl text-xs";
-        fb.innerHTML = "💡 <strong>إجابة غير صحيحة!</strong> الإجابة المعتمدة في امتحانات المحافظات: (A) منادى نكرة مقصودة مبني على الواو في محل نصب.";
-      }
-    }
-
-    function selectPlan(planType, price) {
-      currentSelectedPlan = planType;
-      currentSelectedPrice = price;
-    }
-
-    function sendPaymentConfirmation(e) {
-      e.preventDefault();
-      const name = document.getElementById("student-name").value;
-      const sender = document.getElementById("sender-number").value;
-      const text = encodeURIComponent(
-        `السلام عليكم أ. محمد السنوسي 🌿\n\n` +
-        `أنا الطالب: (${name})\n` +
-        `قمت بالتحويل للاشتراك في منصة «مُبدِع» لعلوم الضاد ومتابعة منهج الشهادة الإعدادية 2026/2027.\n` +
-        `• الباقة المختارة: [ ${currentSelectedPlan} - بقيمة ${currentSelectedPrice} ج.م ]\n` +
-        `• الحساب المحول منه: ${sender}\n` +
-        `• المحول إليه: 01062650131\n\n` +
-        `برجاء تفعيل حسابي.`
-      );
-      window.open(`https://wa.me/201062650131?text=${text}`, "_blank");
-    }
-  </script>
-</body>
-</html>
+        q: "« إِنَّ لِـ <span class='text-emerald-700 underline'>أَبِيكَ</span> عَلَيْكَ فَضْلاً كَبِيراً » .. ما إعراب كلمة (أَبِيكَ)؟",
+        choices: [
+          { text: "اسم مجرور باللام وعلامة جره الياء لأنه من الأسماء الخمسة", correct: true },
+          { text: "اسم إنّ مؤخر منصوب بالألف", correct: false },
+          { text: "مضاف إليه مجرور بالكسرة", correct: false }
+        ],
+        reason: "أبيك
